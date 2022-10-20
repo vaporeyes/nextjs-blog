@@ -18,7 +18,7 @@ export default function About() {
         <title>about</title>
       </Head>
       <section>
-        <h1 className="text-center text-4xl font-bold">About Me</h1>i'm a devops
+        <h1 className="text-center text-4xl font-bold">About Me</h1>my name is josh and i'm a devops
         engineer in middle tennessee with a myriad of interests, including but
         not limited to:
         <br></br>
