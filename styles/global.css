@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body[theme="dark"] {
+  filter: invert(1);
+}
+body[theme="dark"] img {
+  filter: invert(1);
+}
+body[theme="dark"] img.ioda {
+  filter: invert(0);
+}
+@media (prefers-color-scheme: dark) {
+  body[theme="auto"] {
+    filter: invert(1);
+  }
+  body[theme="auto"] img {
+    filter: invert(1);
+  }
+  body[theme="auto"] img.ioda {
+    filter: invert(0);
+  }
+}
+html,
+body {
+  background: rgb(0, 0, 0);
+}
+html {
+  height: 100%;
+}
+body {
+  color: rgb(255, 255, 255);
+  font-family: monospace;
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 0;
+  min-height: 100%;
+  overflow-wrap: break-word;
+}
+.post-meta {
+  text-align: right;
+}
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 3rem;
+}
+hr {
+  margin: 2rem 0;
+}
+p {
+  margin: 1rem 0;
+}
+li {
+  margin: 0.4rem 0;
+}
+a {
+  color: dodgerblue;
+}
+a:visited {
+  color: rgb(190, 172, 255);
+}
+a:hover {
+  color: antiquewhite;
+}
+*:target {
+  background: yellow;
+}
+.w {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+hr {
+  text-align: center;
+  border: 0;
+}
+hr:before {
+  content: "/////";
+}
+hr:after {
+  content: attr(data-content) "/////";
+}
+table {
+  width: 100%;
+}
+table,
+th,
+td {
+  border: thin solid rgb(66, 66, 66);
+  border-collapse: collapse;
+  padding: 0.4rem;
+}
+tr:hover{
+  font-weight: bold;
+  background-color: rgb(143, 143, 143);
+}
+blockquote {
+  font-style: italic;
+  border: thin solid black;
+  padding: 1rem;
+}
+blockquote p {
+  margin: 0;
+}
+img {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+code {
+  font-weight: bold;
+  font-family: monospace
+}

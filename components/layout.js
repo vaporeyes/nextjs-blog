@@ -1,0 +1,30 @@
+import Head from "next/head";
+import styles from "./layout.module.css";
+import Link from "next/link";
+
+export const siteTitle = "a nice, minimal blog";
+
+export default function Layout({ children, home }) {
+  return (
+    <div className="dark">
+      <div className={`${styles.container}`}>
+        <Head>
+          <link rel="icon" href="/favicon.ico" />
+          <meta name="description" content="a minimal blog site" />
+          <meta name="og:title" content={siteTitle} />
+        </Head>
+        <header className={styles.header}>
+          
+        </header>
+        {!home && (
+        <div className={styles.backToHome}>
+          <Link href="/">
+            <a>..</a>
+          </Link>
+        </div>
+      )}
+        <main>{children}</main>
+      </div>
+    </div>
+  );
+}

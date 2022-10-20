@@ -1,0 +1,44 @@
+{
+  "Current": [
+    {
+      "title": "Goblin",
+      "author": "Josh Malerman"
+    }
+  ],
+  "2021": [
+    {
+      "title": "Maus",
+      "author": "Art Spiegelman"
+    }
+  ],
+  "2022": [
+    {
+      "title": "Ulysses",
+      "author": "James Joyce"
+    },
+    {
+      "title": "The Odyssey",
+      "author": "Homer"
+    },
+    {
+      "title": "Treasure Island",
+      "author": "Robert Louis Stevenson"
+    },
+    {
+      "title": "The Stranger",
+      "author": "Albert Camus"
+    },
+    {
+      "title": "The Plague",
+      "author": "Albert Camus"
+    },
+    {
+      "title": "Code 1st Ed.",
+      "author": "Charles Petzold"
+    },
+    {
+      "title": "Neuromancer",
+      "author": "William Gibson"
+    }
+  ]
+}
