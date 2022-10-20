@@ -1,4 +1,4 @@
-import { getAllFitnessFilesIds, getFitnessFilesData } from "../lib/posts";
+import { getAllFitnessFilesIds, getFitnessFilesData } from "../../components/posts";
 import Layout from "../../components/layout";
 
 export async function getStaticProps({ params }) {

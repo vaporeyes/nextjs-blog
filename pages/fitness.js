@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import Script from "next/script";
-import { getSortedFitnessFilesData } from "./lib/posts";
+import { getSortedFitnessFilesData } from "../components/posts";
 import Layout, { siteTitle } from "../components/layout";
 
 export async function getStaticProps() {

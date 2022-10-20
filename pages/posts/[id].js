@@ -1,4 +1,4 @@
-import { getAllPostIds, getPostData } from "../lib/posts";
+import { getAllPostIds, getPostData } from "../../components/posts";
 import Layout from "../../components/layout";
 
 export async function getStaticProps({ params }) {

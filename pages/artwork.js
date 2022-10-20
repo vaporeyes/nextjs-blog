@@ -1,7 +1,7 @@
 import Layout from "../components/layout";
 import Image from "next/image";
 import { SRLWrapper } from "simple-react-lightbox";
-import { getSortedPhotoData } from "./lib/photos";
+import { getSortedPhotoData } from "../components/photos";
 
 export async function getStaticProps() {
   const allPostsData = getSortedPhotoData();
