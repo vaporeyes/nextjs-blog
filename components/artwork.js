@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 
-const photosDirectory = path.join(process.cwd(), "photos");
+const photosDirectory = path.join(process.cwd(), "artwork");
 
 export function getSortedPhotoData() {
   const fileNames = fs.readdirSync(photosDirectory);

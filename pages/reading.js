@@ -9,7 +9,7 @@ export default function Reading() {
         <title>books i have read or am reading</title>
       </Head>
       <section>
-        <h1 className="text-center text-4xl font-bold">books i've read</h1>
+        <h1 className="text-center text-4xl font-bold">books i`&apos;`ve read recently</h1>
       </section>
       <section>
         <br />

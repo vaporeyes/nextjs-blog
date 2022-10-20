@@ -1,7 +1,6 @@
 import Layout from "../components/layout";
-import Image from "next/image";
 import { SRLWrapper } from "simple-react-lightbox";
-import { getSortedPhotoData } from "../components/photos";
+import { getSortedPhotoData } from "../components/artwork";
 
 export async function getStaticProps() {
   const allPostsData = getSortedPhotoData();
@@ -12,9 +11,15 @@ export async function getStaticProps() {
   };
 }
 
+const lightBoxOptions = {
+  buttons: {
+    showDownloadButton: true,
+  }
+}
+
 function BlurImage({ imageData }) {
   return (
-    <SRLWrapper>
+    <SRLWrapper options={lightBoxOptions}>
       <a href={`/images/${imageData.id}.jpg`} data-attribute="SRL" className="group">
         <div className="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
           <img src={`/images/${imageData.id}.jpg`} alt={imageData.id} />

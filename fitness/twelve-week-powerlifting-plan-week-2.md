@@ -43,22 +43,22 @@ This is my 2nd week of a plan I started on `2022-10-3`.
 
 ### 2022-10-13
 
-| DAY 7                | SETS | REPS | WEIGHT | DAILY VOLUME | RPE |
-| -------------------- | ---- | ---- | ------ | ------------ | --- |
-| FRONT SQUAT          | 3    | 8    | 185    | 4440         | 6   |
-| WIDE-GRIP PULLUP     | 3    | 8    | 45     | 1080         | 6   |
-| STIFF-LEG DEADLIFT   | 3    | 8    | 185    | 4440         | 6   |
-| WEIGHTED DIPS        | 3    | 8    | 45     | 1080         | 6   |
-| BENCH PRESS          | 3    | 8    | 175    | 4200         | 6   |
-| CHEST-SUPPORTED ROWS | 3    | 8    | 175    | 4200         | 6   |
+| DAY 7                | SETS | REPS | WEIGHT | DAILY VOLUME |
+| -------------------- | ---- | ---- | ------ | ------------ |
+| FRONT SQUAT          | 3    | 8    | 185    | 4440         |
+| WIDE-GRIP PULLUP     | 3    | 8    | 45     | 1080         |
+| STIFF-LEG DEADLIFT   | 3    | 8    | 185    | 4440         |
+| WEIGHTED DIPS        | 3    | 8    | 45     | 1080         |
+| BENCH PRESS          | 3    | 8    | 175    | 4200         |
+| CHEST-SUPPORTED ROWS | 3    | 8    | 175    | 4200         |
 
 ### 2022-10-14
 
-| DAY 7                | SETS | REPS | WEIGHT | DAILY VOLUME | RPE |
-| -------------------- | ---- | ---- | ------ | ------------ | --- |
-| FRONT SQUAT          | 3    | 8    | 185    | 4440         | 6   |
-| WIDE-GRIP PULLUP     | 3    | 8    | 45     | 1080         | 6   |
-| STIFF-LEG DEADLIFT   | 3    | 8    | 185    | 4440         | 6   |
-| WEIGHTED DIPS        | 3    | 8    | 45     | 1080         | 6   |
-| BENCH PRESS          | 3    | 8    | 175    | 4200         | 6   |
-| CHEST-SUPPORTED ROWS | 3    | 8    | 175    | 4200         | 6   |
+| DAY 7                | SETS | REPS | WEIGHT | DAILY VOLUME |
+| -------------------- | ---- | ---- | ------ | ------------ |
+| FRONT SQUAT          | 3    | 8    | 185    | 4440         |
+| WIDE-GRIP PULLUP     | 3    | 8    | 45     | 1080         |
+| STIFF-LEG DEADLIFT   | 3    | 8    | 185    | 4440         |
+| WEIGHTED DIPS        | 3    | 8    | 45     | 1080         |
+| BENCH PRESS          | 3    | 8    | 175    | 4200         |
+| CHEST-SUPPORTED ROWS | 3    | 8    | 175    | 4200         |

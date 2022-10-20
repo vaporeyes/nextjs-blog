@@ -1,0 +1,19 @@
+.ol {
+    list-style: none;
+    counter-reset: steps;
+}
+
+.ol li {
+    counter-increment: steps;
+}
+
+.ol li::before {
+    content: "Step " counter(steps) ")";
+    margin-right: 0.5rem;
+    color: #ff6f00;
+}
+
+.ul {
+    list-style-type: "→ ";
+    list-style-position: inside;
+}
