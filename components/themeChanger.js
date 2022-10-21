@@ -3,8 +3,6 @@ import { useTheme } from 'next-themes'
 const ThemeChanger = () => {
     const { theme, setTheme } = useTheme()
 
-    const lightButton = <button onClick={() => setTheme('light')}>☀️</button>;
-    const darkButton = <button onClick={() => setTheme('dark')}>🌙</button>;
     const lightSvg = <svg
         onClick={() => setTheme("light")}
         xmlns="http://www.w3.org/2000/svg"

@@ -18,6 +18,11 @@ export default function Fitness({ allPostsData }) {
       <Head>
         <title>my fitness page</title>
       </Head>
+      <br />
+      <section>
+        i have been lifting weights seriously since around 2009, a year or so after i started my IT career. below are various posts related to fitness
+      </section>
+      <br />
       <section>
         <h1 className="text-2xl font-bold text-center">fitness posts</h1>
         <ul>

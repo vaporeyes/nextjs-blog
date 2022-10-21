@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Layout, { siteTitle } from "../components/layout";
+import Layout from "../components/layout";
 import books from "../data/books.json";
 
 export default function Reading() {
@@ -9,7 +9,7 @@ export default function Reading() {
         <title>books i have read or am reading</title>
       </Head>
       <section>
-        <h1 className="text-center text-4xl font-bold">books i`&apos;`ve read recently</h1>
+        <h1 className="text-center text-4xl font-bold">books i&apos;ve read recently</h1>
       </section>
       <section>
         <br />
