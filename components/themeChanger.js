@@ -3,13 +3,15 @@ import { useTheme } from 'next-themes'
 const ThemeChanger = () => {
     const { theme, setTheme } = useTheme()
 
+    const lightButton = <button onClick={() => setTheme('light')}>☀️</button>;
+    const darkButton = <button onClick={() => setTheme('dark')}>🌙</button>;
     const lightSvg = <svg
         onClick={() => setTheme("light")}
         xmlns="http://www.w3.org/2000/svg"
         className="h-6 w-6 text-indigo-200"
         fill="none"
         viewBox="0 0 24 24"
-        stroke="currentColor"
+        stroke="white"
     >
         <path
             strokeLinecap="round"
@@ -24,7 +26,7 @@ const ThemeChanger = () => {
         className="h-6 w-6 text-gray-900"
         fill="none"
         viewBox="0 0 24 24"
-        stroke="currentColor"
+        stroke="black"
     >
         <path
             strokeLinecap="round"
