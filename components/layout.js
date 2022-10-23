@@ -1,6 +1,7 @@
 import Head from "next/head";
 import styles from "./layout.module.css";
 import Link from "next/link";
+import ThemeChanger from "../components/themeChanger";
 
 export const siteTitle = "a nice, minimal blog";
 
@@ -16,13 +17,12 @@ export default function Layout({ children, home }) {
         <header className={styles.header}>
           
         </header>
-        {!home && (
+        <ThemeChanger></ThemeChanger>
         <div className={styles.backToHome}>
           <Link href="/">
             <a>..</a>
           </Link>
         </div>
-      )}
         <main>{children}</main>
       </div>
     </div>

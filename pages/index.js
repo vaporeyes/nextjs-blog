@@ -2,7 +2,6 @@ import Head from "next/head";
 import Link from "next/link";
 import Layout from "../components/layout";
 import { getSortedPostsData, getSortedFitnessFilesData, getSortedRecipesFilesData } from "../components/posts";
-import ThemeChanger from "../components/themeChanger";
 
 
 export async function getStaticProps() {
@@ -19,14 +18,11 @@ export async function getStaticProps() {
 }
 
 export default function Home({ allPostsData, fitnessFilesData, recipeFilesData }) {
-
   return (
     <Layout home>
       <Head>
         <title>...</title>
       </Head>
-      
-      <ThemeChanger></ThemeChanger>
       <section>
         <p className="text-3xl font-bold">ineluctable modalities</p>
       </section>
