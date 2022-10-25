@@ -1,41 +1,49 @@
-import Head from "next/head";
-import Link from "next/link";
-import Layout from "../components/layout";
-import { getSortedPostsData, getSortedFitnessFilesData, getSortedRecipesFilesData } from "../components/posts";
+import Head from 'next/head'
+import Link from 'next/link'
+import Layout from '../components/layout'
+import {
+  getSortedPostsData,
+  getSortedFitnessFilesData,
+  getSortedRecipesFilesData
+} from '../components/posts'
+import styles from '../components/textFiller.module.css'
 
-
-export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
-  const fitnessFilesData = getSortedFitnessFilesData();
-  const recipeFilesData = getSortedRecipesFilesData();
+export async function getStaticProps () {
+  const allPostsData = getSortedPostsData()
+  const fitnessFilesData = getSortedFitnessFilesData()
+  const recipeFilesData = getSortedRecipesFilesData()
   return {
     props: {
       allPostsData,
       fitnessFilesData,
-      recipeFilesData,
-    },
-  };
+      recipeFilesData
+    }
+  }
 }
 
-export default function Home({ allPostsData, fitnessFilesData, recipeFilesData }) {
+export default function Home ({
+  allPostsData,
+  fitnessFilesData,
+  recipeFilesData
+}) {
   return (
     <Layout home>
       <Head>
         <title>...</title>
       </Head>
       <section>
-        <p className="text-3xl font-bold">ineluctable modalities</p>
+        <p className='text-3xl font-bold' data-item="ineluctable modalities" style={styles.textfiller}>ineluctable modalities</p>
       </section>
       <section>
-        <h1 className="text-2xl font-bold">
-          <Link href="/about">about me</Link>
+        <h1 className='text-2xl font-bold'>
+          <Link href='/about'>about me</Link>
         </h1>
         <br />
-        <h1 className="text-2xl font-bold">
-          <Link href="/reading">books i&apos;ve read</Link>
+        <h1 className='text-2xl font-bold'>
+          <Link href='/reading'>books i&apos;ve read</Link>
         </h1>
         <br />
-        <h1 className="text-2xl font-bold">fitness posts</h1>
+        <h1 className='text-2xl font-bold'>fitness posts</h1>
         <ul>
           {fitnessFilesData.map(({ id, date, title }) => (
             <li key={id}>
@@ -46,7 +54,7 @@ export default function Home({ allPostsData, fitnessFilesData, recipeFilesData }
           ))}
         </ul>
         <br />
-        <h1 className="text-2xl font-bold">blog posts</h1>
+        <h1 className='text-2xl font-bold'>blog posts</h1>
         <ul>
           {allPostsData.map(({ id, date, title }) => (
             <li key={id}>
@@ -57,7 +65,7 @@ export default function Home({ allPostsData, fitnessFilesData, recipeFilesData }
           ))}
         </ul>
         <br />
-        <h1 className="text-2xl font-bold">recipe posts</h1>
+        <h1 className='text-2xl font-bold'>recipe posts</h1>
         <ul>
           {recipeFilesData.map(({ id, date, title }) => (
             <li key={id}>
@@ -69,5 +77,5 @@ export default function Home({ allPostsData, fitnessFilesData, recipeFilesData }
         </ul>
       </section>
     </Layout>
-  );
+  )
 }

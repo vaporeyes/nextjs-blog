@@ -4,13 +4,13 @@ date: "2022-10-20"
 tags:
   - recipes
   - lemonade
+  - drinks
 ---
-
-# Making Lemonade
 
 One of my favorite things to make is lemonade. This is a method I use:
 
 ## Ingredients
+
 - 1-1/2c sugar
 - 1/2c boiling water
 - 1-1/4c to 1-1/2c lemon juice

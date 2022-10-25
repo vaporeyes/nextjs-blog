@@ -6,8 +6,6 @@ tags:
   - powerlifting
 ---
 
-# A 12-Week Powerlifting Plan
-
 This plan has been taken from a ton of different places over the years. As they say: `standing on the shoulders of giants`.
 
 ## Week 1

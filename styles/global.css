@@ -26,27 +26,27 @@ body {
 }
 
 h1 {
-  font-size: 20px
+  font-size: 20px;
 }
 
 h2 {
-  font-size: 17px
+  font-size: 17px;
 }
 
 h3 {
-  font-size: 14px
+  font-size: 14px;
 }
 
 h4 {
-  font-size: 11px
+  font-size: 11px;
 }
 
 h5 {
-  font-size: 8px
+  font-size: 8px;
 }
 
 h6 {
-  font-size: 5px
+  font-size: 5px;
 }
 
 h2,
@@ -93,11 +93,11 @@ hr {
 }
 
 hr:before {
-  content: "/////";
+  content: '/////';
 }
 
 hr:after {
-  content: attr(data-content) "/////";
+  content: attr(data-content) '/////';
 }
 
 table {
@@ -135,7 +135,7 @@ img {
 
 code {
   font-weight: bold;
-  font-family: monospace
+  font-family: monospace;
 }
 
 .font-major-mono {
@@ -143,8 +143,14 @@ code {
 }
 
 .progress-bar-gradient {
-  background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(5,4,70,1) 10%, rgba(9,9,121,1) 40%, rgba(0,212,255,1) 90%);
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(5, 4, 70, 1) 10%,
+    rgba(9, 9, 121, 1) 40%,
+    rgba(0, 212, 255, 1) 90%
+  );
 }
 
 .recipeformat ol {
@@ -157,12 +163,111 @@ code {
 }
 
 .recipeformat ol li::before {
-  content: "Step " counter(steps) ")";
+  content: 'Step ' counter(steps) ')';
   margin-right: 0.5rem;
   color: rgb(121, 134, 151);
 }
 
 .recipeformat ul {
-  list-style-type: "→ ";
+  list-style-type: '→ ';
   list-style-position: inside;
+}
+
+.text-filler * {
+  padding: 0;
+  margin: 0;
+}
+.text-filler body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 100vh;
+  font-family: Hack, monospace;
+}
+.text-filler div {
+  color: #727272;
+  text-align: center;
+}
+.text-filler p {
+  margin: 16px;
+  font-size: 96px;
+  color: #ccc;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: all 1s ease-in-out;
+  position: relative;
+}
+.text-filler p::before {
+  content: attr(data-item);
+  transition: all 1s ease-in-out;
+  color: #8254ff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 0;
+  overflow: hidden;
+}
+.text-filler p:hover::before {
+  width: 100%;
+}
+.text-filler nav {
+  margin: 25px;
+  background: #f9f9f9;
+  padding: 16px;
+}
+.text-filler nav .menuItems {
+  list-style: none;
+  display: flex;
+}
+.text-filler nav .menuItems li {
+  margin: 50px;
+}
+.text-filler nav .menuItems li a {
+  text-decoration: none;
+  color: #8f8f8f;
+  font-size: 24px;
+  font-weight: 400;
+  transition: all 0.5s ease-in-out;
+  position: relative;
+  text-transform: uppercase;
+}
+.text-filler nav .menuItems li a::before {
+  content: attr(data-item);
+  transition: 0.5s;
+  color: #8254ff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 0;
+  overflow: hidden;
+}
+.text-filler nav .menuItems li a:hover::before {
+  width: 100%;
+  transition: all 0.5s ease-in-out;
+}
+.text-filler footer {
+  position: absolute;
+  font-size: 12px;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  font-size: 14px;
+  background-color: #f1f1f1;
+  color: #000000;
+  text-align: center;
+}
+.text-filler footer a {
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid;
+}
+.text-filler footer a:hover {
+  border-bottom: 1px transparent;
 }

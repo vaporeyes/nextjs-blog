@@ -5,10 +5,28 @@
       "author": "Josh Malerman"
     }
   ],
+  "2020": [
+    {
+      "title": "American Psycho",
+      "author": "Bret Easton Ellis"
+    },
+    {
+      "title": "Fight Club",
+      "author": "Chuck Palahniuk"
+    }
+  ],
   "2021": [
     {
       "title": "Maus",
       "author": "Art Spiegelman"
+    },
+    {
+      "title": "Interview with the Vampire",
+      "author": "Anne Rice"
+    },
+    {
+      "title": "The Vampire Lestat",
+      "author": "Anne Rice"
     },
     {
       "title": "The Wisdom of Insecurity",
@@ -16,6 +34,10 @@
     }
   ],
   "2022": [
+    {
+      "title": "The Will to Change",
+      "author": "Bell Hooks"
+    },
     {
       "title": "Meditations",
       "author": "Marcus Aurelius"

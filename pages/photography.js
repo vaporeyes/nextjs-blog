@@ -3,7 +3,7 @@ import { getSortedPhotoData } from '../components/photos'
 import { SRLWrapper } from 'simple-react-lightbox'
 
 export async function getStaticProps () {
-  const allPostsData = getSortedPhotoData()
+  const allPostsData = getSortedPhotoData('photography')
   return {
     props: {
       allPostsData
@@ -32,13 +32,13 @@ function BlurImage ({ imageData }) {
   )
 }
 
-export default function Artwork ({ allPostsData }) {
+export default function Photography ({ allPostsData }) {
   return (
     <Layout>
       <section>
-        <h2 className='text-lg text-center'>artwork over the years</h2>
+        <h2 className='text-lg text-center'>photography</h2>
         <h3 className='text-sm'>
-          A lot of macro shots of spiders and insects and some landscapes
+          Random photography with a Nikon D3200 (or an iPhone)
         </h3>
       </section>
       <SRLWrapper

@@ -3,7 +3,7 @@ import styles from "./layout.module.css";
 import Link from "next/link";
 import ThemeChanger from "../components/themeChanger";
 
-export const siteTitle = "a nice, minimal blog";
+export const siteTitle = "a site";
 
 export default function Layout({ children, home }) {
   return (
@@ -11,7 +11,7 @@ export default function Layout({ children, home }) {
       <div className={`${styles.container}`}>
         <Head>
           <link rel="icon" href="/favicon.ico" />
-          <meta name="description" content="a minimal blog site" />
+          <meta name="description" content="a site" />
           <meta name="og:title" content={siteTitle} />
         </Head>
         <header className={styles.header}>

@@ -19,6 +19,9 @@ export default function Recipes({ allPostsData }) {
           <title>recipes and whatnot</title>
         </Head>
         <section>
+          <p>My list of recipes</p>
+        </section>
+        <section>
           <ul>
           {allPostsData.map(({ id, date, title }) => (
               <li key={id}>

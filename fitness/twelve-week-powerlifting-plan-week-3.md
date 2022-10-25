@@ -6,8 +6,6 @@ tags:
   - powerlifting
 ---
 
-# A 12-Week Powerlifting Plan
-
 This is my 3rd week of a plan I started on `2022-10-3`.
 
 ## Week 3
