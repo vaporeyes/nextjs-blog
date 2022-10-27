@@ -35,3 +35,22 @@ This is my 4th week of a plan I started on `2022-10-3`.
 | FLAT DB PRESS      | 4    | 8    | 130    | 4160         |
 | WIDE GRIP PULL-UPS | 4    | 10   | 0      | -            |
 | DIPS               | 3    | 8    | 0      | -            |
+
+### 2022-10-26
+
+| DAY 15  | SETS | REPS | WEIGHT | DAILY VOLUME |
+| ------- | ---- | ---- | ------ | ------------ |
+| RUNNING |      |      |        | 2.7 MI       |
+
+### 2022-10-27
+
+| DAY 16                    | SETS | REPS | WEIGHT | DAILY VOLUME |
+| ------------------------- | ---- | ---- | ------ | ------------ |
+| FRONT SQUAT               | 1    | 2    | 235    | 470          |
+| FRONT SQUAT               | 3    | 3    | 225    | 2025         |
+| BENCH PRESS (VARIED GRIP) | 3    | 6    | 195    | 3510         |
+| INCLINE DB PRESS          | 3    | 8    | 110    | 2640         |
+| WEIGHTED PULLUPS          | 3    | 8    | 52     | 1248         |
+| DB LAT RAISES             | 3    | 8    | 0      | 0            |
+| FINGER-GRIP PULLUPS       | 3    | 8    | 0      | 0            |
+| HANGING LEG RAISES        | 3    | 8    | 0      | 0            |

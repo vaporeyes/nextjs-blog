@@ -66,15 +66,15 @@ p {
 }
 
 a {
-  color: dodgerblue;
+  color: #458588;
 }
 
 a:visited {
-  color: rgb(190, 172, 255);
+  color: #d3869b;
 }
 
 a:hover {
-  color: antiquewhite;
+  color: #fabd2f;
 }
 
 *:target {

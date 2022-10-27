@@ -38,7 +38,7 @@ export default function Artwork ({ allPostsData }) {
       <section>
         <h2 className='text-lg text-center'>artwork over the years</h2>
         <h3 className='text-sm'>
-          A lot of macro shots of spiders and insects and some landscapes
+          Mostly pen and ink on wood, some on paper. A few paintings.
         </h3>
       </section>
       <SRLWrapper
