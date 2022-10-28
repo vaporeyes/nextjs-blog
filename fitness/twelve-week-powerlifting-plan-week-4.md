@@ -54,3 +54,16 @@ This is my 4th week of a plan I started on `2022-10-3`.
 | DB LAT RAISES             | 3    | 8    | 0      | 0            |
 | FINGER-GRIP PULLUPS       | 3    | 8    | 0      | 0            |
 | HANGING LEG RAISES        | 3    | 8    | 0      | 0            |
+
+### 2022-10-28
+
+| DAY 17            | SETS | REPS | WEIGHT | DAILY VOLUME |
+| ----------------- | ---- | ---- | ------ | ------------ |
+| DEADLIFT          | 1    | 2    | 385    | 770          |
+| DEADLIFT          | 1    | 3    | 365    | 1095         |
+| DEADLIFT          | 4    | 3    | 345    | 4140         |
+| TEMPO BENCH PRESS | 1    | 6    | 185    | 1110         |
+| BENCH PRESS       | 3    | 6    | 155    | 2790         |
+| BACK EXTENSIONS   | 3    | 8    | 0      | 0            |
+| ROWS              | 3    | 12   | 135    | 4860         |
+| GET-UPS           | 5    | 1    | 52     | 260          |
