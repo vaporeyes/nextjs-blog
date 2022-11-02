@@ -27,3 +27,18 @@ This is my 5th week of a plan I started on `2022-10-31`.
 | WEIGHTED DIPS       | 1    | 3    | 90     | 270          |
 | LEG RAISES          | 3    | 6    |        | 0            |
 | GHRs                | 3    | 6    |        | 0            |
+
+### 2022-11-01
+
+| DAY 19               | SETS | REPS | WEIGHT | DAILY VOLUME | RPE |
+| -------------------- | ---- | ---- | ------ | ------------ | --- |
+| BENCH PRESS          | 1    | 4    | 205    | 820          | 8.5 |
+| BENCH PRESS          | 1    | 1    | 225    | 225          | 9   |
+| BENCH PRESS          | 3    | 4    | 185    | 2214         | 7   |
+| BENCH PRESS          | 1    | 4    | 173    | 694          | 6.5 |
+| DEFICIT DEADLIFT     | 1    | 4    | 315    | 1260         | 6   |
+| DEFICIT DEADLIFT     | 1    | 1    | 365    | 365          | 7.5 |
+| DEFICIT DEADLIFT     | 3    | 4    | 295    | 3540         | 7   |
+| FLAT DB PRESS        | 3    | 8    | 130    | 3120         | 7-8 |
+| WIDE GRIP PULL-UPS   | 4    | 6    | 0      | -            | 7-8 |
+| FINGER-GRIP PULL-UPS | 3    | 6    | 0      | -            | 7-8 |
