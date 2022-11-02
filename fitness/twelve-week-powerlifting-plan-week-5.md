@@ -42,3 +42,9 @@ This is my 5th week of a plan I started on `2022-10-31`.
 | FLAT DB PRESS        | 3    | 8    | 130    | 3120         | 7-8 |
 | WIDE GRIP PULL-UPS   | 4    | 6    | 0      | -            | 7-8 |
 | FINGER-GRIP PULL-UPS | 3    | 6    | 0      | -            | 7-8 |
+
+### 2022-11-02
+
+|DAY 20 |SETS|REPS|WEIGHT|DAILY VOLUME|
+|-------|----|----|------|------------|
+|RUNNING|    |    |      |2.25 MI     |
