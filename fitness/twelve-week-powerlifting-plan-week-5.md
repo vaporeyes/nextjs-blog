@@ -45,6 +45,30 @@ This is my 5th week of a plan I started on `2022-10-31`.
 
 ### 2022-11-02
 
-|DAY 20 |SETS|REPS|WEIGHT|DAILY VOLUME|
-|-------|----|----|------|------------|
-|RUNNING|    |    |      |2.25 MI     |
+| DAY 20  | SETS | REPS | WEIGHT | DAILY VOLUME |
+| ------- | ---- | ---- | ------ | ------------ |
+| RUNNING |      |      |        | 2.25 MI      |
+
+### 2022-11-03
+
+| DAY 21                    | SETS | REPS | WEIGHT | DAILY VOLUME |
+| ------------------------- | ---- | ---- | ------ | ------------ |
+| FRONT SQUAT               | 1    | 1    | 265    | 265          |
+| FRONT SQUAT               | 4    | 3    | 225    | 2700         |
+| BENCH PRESS (VARIED GRIP) | 3    | 6    | 175    | 3150         |
+| INCLINE DB PRESS          | 3    | 10   | 100    | 3000         |
+| DB LAT RAISES             | 4    | 10   | 20     | 800          |
+| DB FLYES                  | 4    | 12   | 30     | 1440         |
+| TRI OVERHEAD EXT          | 4    | 15   | 60     | 3600         |
+| GHR ISO HOLDS             | 3    | 30s  | -      | -            |
+| GHR BACK EXTENSIONS       | 3    | 8    | -      | -            |
+
+### 2022-11-04
+
+| DAY 22           | SETS | REPS | WEIGHT | DAILY VOLUME |
+| ---------------- | ---- | ---- | ------ | ------------ |
+| DEADLIFT         | 1    | 3    | 405    | 1215         |
+| DEADLIFT         | 1    | 2    | 385    | 770          |
+| DEADLIFT         | 4    | 4    | 315    | 5040         |
+| WEIGHTED PULLUPS | 3    | 6    | 52     | 936          |
+| WEIGHTED PISTOLS | 3    | 6    | 26     | 468          |

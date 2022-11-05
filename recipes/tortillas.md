@@ -1,5 +1,5 @@
 ---
-title: tortillas
+title: Tortillas
 date: "2022-10-30"
 recipe: tortillas
 category: mexican

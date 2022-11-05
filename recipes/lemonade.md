@@ -1,6 +1,8 @@
 ---
 title: "Lemonade"
 date: "2022-10-20"
+recipe: lemonade
+category: drinks
 tags:
   - recipes
   - lemonade

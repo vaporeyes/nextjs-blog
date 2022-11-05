@@ -1,6 +1,8 @@
 ---
 title: "Small Batch Spaghetti Sauce"
 date: "2022-10-24"
+recipe: spaghetti sauce
+category: italian
 tags:
   - recipes
   - spaghetti
