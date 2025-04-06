@@ -13,7 +13,8 @@ def func():
   print('funcy')
 ```
 
-Here is some rust code:
+Here is some `rust` code:
+
 ```rust
 fn main() {
   let derp = 'derp';
@@ -28,3 +29,5 @@ a table test
 | 1  | 2  | 3  | 4  | 5  |
 | 6  | 7  | 8  | 9  | 0  |
 | 1  | 2  | 3  | 4  | 5  |
+
+**DERP**

@@ -20,7 +20,7 @@ export default function Fitness({ allPostsData }) {
       </Head>
       <br />
       <section>
-        i have been lifting weights seriously since around 2009, a year or so after i started my IT career. below are various posts related to fitness
+        i have been lifting weights seriously since around 2009, a year or so after i started my IT career. below is what i've tracked for a few years
       </section>
       <br />
       <section>

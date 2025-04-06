@@ -6,9 +6,8 @@ import {
   getSortedFitnessFilesData,
   getSortedRecipesFilesData
 } from '../components/posts'
-import styles from '../components/textFiller.module.css'
 
-export async function getStaticProps () {
+export async function getStaticProps() {
   const allPostsData = getSortedPostsData()
   const fitnessFilesData = getSortedFitnessFilesData()
   const recipeFilesData = getSortedRecipesFilesData()
@@ -21,40 +20,24 @@ export async function getStaticProps () {
   }
 }
 
-export default function Home ({
+export default function Home({
   allPostsData,
-  fitnessFilesData,
   recipeFilesData
 }) {
   return (
     <Layout home>
       <Head>
-        <title>...</title>
+        <title>ineluctable modalities</title>
       </Head>
       <section>
-        <p className='text-3xl font-bold' data-item="ineluctable modalities" style={styles.textfiller}>ineluctable modalities</p>
-      </section>
-      <section>
-        <h1 className='text-2xl font-bold'>
+        <h1 className='text-xl font-bold'>
           <Link href='/about'>about me</Link>
+          <br />
+          <Link href='/reading'>books i&apos;ve read and currently reading</Link>
+          <br />
+          <Link href='/fitness'>fitness</Link>
         </h1>
-        <br />
-        <h1 className='text-2xl font-bold'>
-          <Link href='/reading'>books i&apos;ve read</Link>
-        </h1>
-        <br />
-        <h1 className='text-2xl font-bold'>fitness posts</h1>
-        <ul>
-          {fitnessFilesData.map(({ id, date, title }) => (
-            <li key={id}>
-              <span>{date}</span>
-              {` `}
-              <Link href={`/fitness/${id}`}>{title}</Link>
-            </li>
-          ))}
-        </ul>
-        <br />
-        <h1 className='text-2xl font-bold'>blog posts</h1>
+        <h1 className='text-xl font-bold'>blog posts</h1>
         <ul>
           {allPostsData.map(({ id, date, title }) => (
             <li key={id}>
@@ -64,8 +47,7 @@ export default function Home ({
             </li>
           ))}
         </ul>
-        <br />
-        <h1 className='text-2xl font-bold'>recipe posts</h1>
+        <h1 className='text-xl font-bold'>recipe posts</h1>
         <ul>
           {recipeFilesData.map(({ id, date, title }) => (
             <li key={id}>

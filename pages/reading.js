@@ -13,25 +13,27 @@ export default function Reading() {
       </section>
       <section>
         <br />
-        {Object.entries(books).map(([year, booksList]) => (
-          <section>
-            <h1 className="text-1xl font-bold text-right">{year}</h1>
-            <ul>
-              <li key={`${year}`}>
-                <ul>
-                  {Object.entries(booksList).map(([idx, book]) => (
-                    <li key={`${idx}`}>
-                      <span className="text-1xl font-black text-slate-400 hover:text-slate-50">
-                        {book.title}:{` `}
-                      </span>
-                      {book.author}
-                    </li>
-                  ))}
-                </ul>
-              </li>
-            </ul>
-          </section>
-        ))}
+        {Object.entries(books)
+          .sort(([yearA], [yearB]) => parseInt(yearB) - parseInt(yearA))
+          .map(([year, booksList]) => (
+            <section key={year}>
+              <h1 className="text-1xl font-bold text-right">{year}</h1>
+              <ul>
+                <li key={`${year}`}>
+                  <ul>
+                    {Object.entries(booksList).map(([idx, book]) => (
+                      <li key={`${idx}`}>
+                        <span className="text-1xl font-black text-slate-400 hover:text-slate-50">
+                          {book.title}:{` `}
+                        </span>
+                        {book.author}
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              </ul>
+            </section>
+          ))}
       </section>
     </Layout>
   );

@@ -1,30 +1,33 @@
-import Head from "next/head";
-import styles from "./layout.module.css";
-import Link from "next/link";
-import ThemeChanger from "../components/themeChanger";
+import Head from 'next/head'
+import styles from './layout.module.css'
+import Link from 'next/link'
 
-export const siteTitle = "a site";
+export const siteTitle = 'ineluctable modalities'
 
-export default function Layout({ children, home }) {
+export default function Layout ({ children, home }) {
   return (
-    <div className="dark">
-      <div className={`${styles.container}`}>
-        <Head>
-          <link rel="icon" href="/favicon.ico" />
-          <meta name="description" content="a site" />
-          <meta name="og:title" content={siteTitle} />
-        </Head>
-        <header className={styles.header}>
-          
+    <div className={`${styles.container}`}>
+      <Head>
+        <link rel='icon' href='/favicon.ico' />
+        <meta name='description' content='a site' />
+        <meta name='og:title' content={siteTitle} />
+      </Head>
+      <div className='flex justify-between items-center mb-8'>
+        <header>
+          {home ? (
+            <>
+              <h1 className={styles.heading2Xl}>{siteTitle}</h1>
+            </>
+          ) : (
+            <>
+              <Link href='/' className='backToHome'>
+                ← Back to home
+              </Link>
+            </>
+          )}
         </header>
-        <ThemeChanger></ThemeChanger>
-        <div className={styles.backToHome}>
-          <Link href="/">
-            <a>..</a>
-          </Link>
-        </div>
-        <main>{children}</main>
       </div>
+      <main>{children}</main>
     </div>
-  );
+  )
 }

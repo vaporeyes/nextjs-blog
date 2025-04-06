@@ -1,8 +1,8 @@
 {
-  "Current": [
+  "2025": [
     {
-      "title": "Goblin",
-      "author": "Josh Malerman"
+      "title": "Jimmy Corrigan: The Smartest Kid on Earth",
+      "author": "Chris Ware"
     }
   ],
   "2020": [
@@ -41,7 +41,8 @@
     {
       "title": "Metamorphosis",
       "author": "Franz Kafka"
-    },{
+    },
+    {
       "title": "Two Years Before the Mast",
       "author": "Richard Dana"
     },
@@ -84,6 +85,34 @@
     {
       "title": "Neuromancer",
       "author": "William Gibson"
+    }
+  ],
+  "2023": [
+    {
+      "title": "Infinite Jest",
+      "author": "David Foster Wallace"
+    },
+    {
+      "title": "Goblin",
+      "author": "Josh Malerman"
+    },
+    {
+      "title": "The Mummy",
+      "author": "Anne Rice"
+    },
+    {
+      "title": "The Tale of the Body Thief",
+      "author": "Anne Rice"
+    }
+  ],
+  "2024": [
+    {
+      "title": "The 3-Body Problem",
+      "author": "Liu Cixin"
+    },
+    {
+      "title": "The Treasures of Pompeii and Herculaneum",
+      "author": "Many Authors"
     }
   ]
 }
