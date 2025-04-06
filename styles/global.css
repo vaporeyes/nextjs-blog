@@ -142,7 +142,7 @@ a:hover {
 }
 
 .container {
-  max-width: 65ch;
+  max-width: 90ch;
   margin: 0 auto;
   padding: 0 var(--space-md);
 }
