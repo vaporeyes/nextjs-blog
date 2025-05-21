@@ -33,9 +33,11 @@ export default function Home({
         <h1 className='text-xl font-bold'>
           <Link href='/about'>about me</Link>
           <br />
-          <Link href='/reading'>books i&apos;ve read and currently reading</Link>
+          <Link href='/reading'>reading list</Link>
           <br />
           <Link href='/fitness'>fitness</Link>
+          <br />
+          <Link href="https://notes.josh.contact">notes</Link>
         </h1>
         <h1 className='text-xl font-bold'>blog posts</h1>
         <ul>
