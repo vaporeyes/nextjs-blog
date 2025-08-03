@@ -1,0 +1,23 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# React Component Guidelines
+- Use functional components with hooks
+- Keep components small and focused
+- Separate business logic from UI
+- Use proper prop validation with PropTypes or TypeScript
+- Destructure props in function parameters
+- Use memo() for optimizing renders when appropriate
+- Avoid inline styles, use CSS modules or styled-components
+- Follow this component structure:
+  1. Imports
+  2. Type definitions
+  3. Helper functions
+  4. Component function
+  5. Default props
+  6. Export statement
+
+# Component Example

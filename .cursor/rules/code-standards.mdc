@@ -1,0 +1,26 @@
+---
+description: Project coding standards and style guide
+globs: ["*.js", "*.ts", "*.tsx"]
+alwaysApply: true
+---
+
+# Code Style Guidelines
+- Use camelCase for variables and functions
+- Use PascalCase for classes and components
+- Use UPPERCASE for constants
+- Always use semicolons
+- Prefer const over let, avoid var
+- Maximum line length: 100 characters
+- Use 2 spaces for indentation
+- Use TypeScript for type safety
+- Use async/await over promises with .then()
+- Add JSDoc comments for all public functions and methods
+
+# Project Architecture
+- Follow MVC pattern
+- Store API calls in dedicated service files
+- Use Redux for global state management
+- Use React hooks for component state
+
+@.eslintrc.js
+@tsconfig.json
