@@ -11,7 +11,7 @@ interface LayoutProps {
   home?: boolean;
 }
 
-export default function Layout ({ children, home }: LayoutProps) {
+export default function Layout({ children, home }: LayoutProps) {
   return (
     <div className={styles.container}>
       <Head>
@@ -25,9 +25,6 @@ export default function Layout ({ children, home }: LayoutProps) {
             <div>
               <div className='flex justify-between items-start gap-4 mb-4'>
                 <h1 className={styles.heading2Xl}>{siteTitle}</h1>
-                <div className='flex-1 max-w-md'>
-                  <Search />
-                </div>
               </div>
             </div>
           ) : (
@@ -38,8 +35,12 @@ export default function Layout ({ children, home }: LayoutProps) {
             </>
           )}
         </header>
+        <div className='flex-1 max-w-md'>
+          <Search />
+        </div>
       </div>
       <main>{children}</main>
     </div>
+
   )
 }

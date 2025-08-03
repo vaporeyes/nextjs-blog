@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://josh.contact</id>
+    <title>ineluctable modalities</title>
+    <updated>2025-08-03T12:56:52.580Z</updated>
+    <generator>Feed for Node.js</generator>
+    <author>
+        <name>Josh</name>
+        <email>contact@josh.contact</email>
+        <uri>https://josh.contact</uri>
+    </author>
+    <link rel="alternate" href="https://josh.contact"/>
+    <link rel="self" href="https://josh.contact/atom.xml"/>
+    <subtitle>A personal blog covering various topics</subtitle>
+    <logo>https://josh.contact/favicon.ico</logo>
+    <icon>https://josh.contact/favicon.ico</icon>
+    <rights>All rights reserved 2025, Josh</rights>
+    <entry>
+        <title type="html"><![CDATA[Cloudflare + Notes on a Subdomain]]></title>
+        <id>https://josh.contact/posts/setting-up-cloudflare-for-this-site</id>
+        <link href="https://josh.contact/posts/setting-up-cloudflare-for-this-site"/>
+        <updated>2025-05-21T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[A Subdomain for My Notes
+I've been using Obsidian for a while now and it has this interesting paid feature for publishing notes. I decided to setup Cloudflare as my DNS for this site and use it to hos...]]></summary>
+        <content type="html"><![CDATA[<h2>A Subdomain for My Notes</h2>
+<p>I've been using Obsidian for a while now and it has this interesting paid feature for publishing notes. I decided to setup Cloudflare as my DNS for this site and use it to host my Obsidian notes as a subdomain, i.e. <code>notes.josh.contact</code>, it was literally as easy as clicking some buttons, changing nameservers and waiting for DNS to propagate. And now I have a notes subdomain! I figure longer-post things would end up here and shorter musings, thoughts and other things ending up there.</p>
+<h2>Now I Have to Write More</h2>
+<p>I would like to write more (online anyway) as it feels like it helps me consolidate thoughts and feelings on topics. I've kept a written "diary" of sorts, more like an engineering journal, off and on for many years - since my early days in IT back in 2008/2009. I found that once I moved into information work (from driving forklifts) that I needed to remember far more "things"; since the brain is so tricky and fickle, writing things down has been key.</p>
+<h2>The AI Boom</h2>
+<p>This new agentic coding / AI boom is very interesting. It <em>feels</em> like, if we do this right, agentic coding could really make experienced programmers far more productive in addition to bring junior and mid-level engineers up in their understanding. To me, thats the real issue: using AI safely to avoid knowledge rot. I do feel there is something to be said for "understanding" what is happening underneath.</p>]]></content>
+        <author>
+            <name>Josh</name>
+            <email>contact@josh.contact</email>
+            <uri>https://josh.contact</uri>
+        </author>
+        <category label="cloudflare"/>
+        <category label="obsidian"/>
+        <category label="notes"/>
+        <category label="writing"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Two Years Before the Mast]]></title>
+        <id>https://josh.contact/posts/two-years-before-the-mast</id>
+        <link href="https://josh.contact/posts/two-years-before-the-mast"/>
+        <updated>2022-11-02T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[A novel by Richard Dana
+I came across this novel via the Harvard Classics (HC). Earlier in the year I managed to find a really good deal on a complete set of the HC. One of the volumes in this set is ...]]></summary>
+        <content type="html"><![CDATA[<h2>A novel by Richard Dana</h2>
+<p>I came across this novel via the Harvard Classics (HC). Earlier in the year I managed to find a really good deal on a complete set of the HC. One of the volumes in this set is Two Years Before the Mast, a true account of Richard Dana's travels from Boston to the southern tip of South America and around to California - all during the pre-gold-rush era when the land was still more-or-less pristine.</p>
+<p>What struck me most about Two Years Before the Mast is how vividly Dana captures the raw, often unforgiving life of a common sailor in the early 19th century. Unlike the romanticized versions of sea life we often see in fiction, Dana’s account is grounded and gritty. He didn't sail as a gentleman observer, but as an ordinary crew member (hence "Before the Mast" in the title), trading his Harvard education for a sailor’s hard labor due to poor eyesight.</p>
+<p>Through his eyes (no pun intended), we see a world that feels both alien and familiar — a California coastline untouched by development, the harsh hierarchies aboard ship, and the camaraderie (and conflict) among seamen from all walks of life. There’s something strangely compelling about the way Dana writes—straightforward and observant, but also reflective and deeply humane.</p>
+<p>For me, one of the most moving parts of the novel comes when a sailor goes overboard and the finality of that. Back in this time, that was it, it was rare to be saved in swells.</p>]]></content>
+        <author>
+            <name>Josh</name>
+            <email>contact@josh.contact</email>
+            <uri>https://josh.contact</uri>
+        </author>
+        <category label="dana"/>
+        <category label="literature"/>
+        <category label="california"/>
+        <category label="gold rush"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Testing language syntax in markdown]]></title>
+        <id>https://josh.contact/posts/testing-language-syntax-in-md</id>
+        <link href="https://josh.contact/posts/testing-language-syntax-in-md"/>
+        <updated>2022-10-08T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Below is some python code:
+def func():
+  print('funcy')
+
+Here is some rust code:
+fn main() {
+  let derp = 'derp';
+  println!("{:?}", derp)
+}
+
+a table test
+
+
+
+h1
+h2
+h3
+h4
+h5
+
+
+
+
+1
+2
+3
+4
+5
+
+
+6
+7
+8
+9
+0
+
+...]]></summary>
+        <content type="html"><![CDATA[<p>Below is some <code>python</code> code:</p>
+<pre><code class="hljs language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">func</span>():
+  <span class="hljs-built_in">print</span>(<span class="hljs-string">'funcy'</span>)
+</code></pre>
+<p>Here is some <code>rust</code> code:</p>
+<pre><code class="hljs language-rust"><span class="hljs-keyword">fn</span> <span class="hljs-title function_">main</span>() {
+  <span class="hljs-keyword">let</span> <span class="hljs-variable">derp</span> = <span class="hljs-symbol">'der</span>p<span class="hljs-string">';
+  println!("{:?}", derp)
+}
+</span></code></pre>
+<p>a table test</p>
+<table>
+<thead>
+<tr>
+<th>h1</th>
+<th>h2</th>
+<th>h3</th>
+<th>h4</th>
+<th>h5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+</tr>
+<tr>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<p><strong>DERP</strong></p>]]></content>
+        <author>
+            <name>Josh</name>
+            <email>contact@josh.contact</email>
+            <uri>https://josh.contact</uri>
+        </author>
+        <category label="languages"/>
+        <category label="syntax"/>
+    </entry>
+</feed>

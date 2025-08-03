@@ -74,10 +74,10 @@
 
 **Goal**: Provide an RSS feed so that readers can subscribe to blog updates.
 
-> **Prompt 3.1.1: Add RSS Package & Script**
+> **Prompt 3.1.1: Add◊ RSS Package & Script**
 >
 > "Add the `feed` package to the project. Then, create a new script at `lib/rss.ts`. This script should export a function `generateRssFeed` that:
->
+>◊
 > 1. Fetches all sorted post data.
 > 2. Uses the `feed` package to construct an RSS feed in XML format.
 > 3. Saves the output as `rss.xml` in the `public/` directory."
