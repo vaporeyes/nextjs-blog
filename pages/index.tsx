@@ -6,11 +6,25 @@ import {
   getSortedFitnessFilesData,
   getSortedRecipesFilesData
 } from '../components/posts'
+import fs from 'fs'
+import path from 'path'
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData()
   const fitnessFilesData = getSortedFitnessFilesData()
   const recipeFilesData = getSortedRecipesFilesData()
+  
+  // Create search index
+  const searchIndex = [
+    ...allPostsData.map(post => ({ ...post, type: 'post', url: `/posts/${post.id}` })),
+    ...fitnessFilesData.map(item => ({ ...item, type: 'fitness', url: `/fitness/${item.id}` })),
+    ...recipeFilesData.map(recipe => ({ ...recipe, type: 'recipe', url: `/recipes/${recipe.id}` }))
+  ]
+  
+  // Write search index to public directory
+  const searchIndexPath = path.join(process.cwd(), 'public', 'search.json')
+  fs.writeFileSync(searchIndexPath, JSON.stringify(searchIndex, null, 2))
+  
   return {
     props: {
       allPostsData,

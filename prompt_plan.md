@@ -32,7 +32,7 @@
 >
 > "Add the `fuse.js` library to the project by running the appropriate package manager command."
 
-> **Prompt 2.1.2: Create Search Index**
+> **Prompt 2.1.2: Create Search Index** ✅ COMPLETED
 >
 > "Modify `pages/index.tsx`'s `getStaticProps` function. In addition to fetching posts, recipes, etc., create a consolidated list of all content items. Write this list to a file named `search.json` inside the `public/` directory. This script should only run at build time."
 
