@@ -38,8 +38,8 @@ const SkillTree = () => {
     }
   }
 
-  const [expandedCategory, setExpandedCategory] = useState(null)
-  const [hoveredSkill, setHoveredSkill] = useState(null)
+  const [expandedCategory, setExpandedCategory] = useState<string | null>(null)
+  const [hoveredSkill, setHoveredSkill] = useState<string | null>(null)
 
   // Get level description based on skill level
   const getLevelDescription = level => {

@@ -9,13 +9,14 @@ import rehypeHighlight from 'rehype-highlight'
 import rehypeStringify from 'rehype-stringify'
 import rehypeImgSize from 'rehype-img-size'
 import rehypeFigure from 'rehype-figure'
+import { ContentItem } from '../types'
 
 const postsDirectory = path.join(process.cwd(), 'posts')
 const fitnessFilesDirectory = path.join(process.cwd(), 'fitness')
 const recipesFilesDirectory = path.join(process.cwd(), 'recipes')
 
 
-function getAllFileIds(directory) {
+function getAllFileIds(directory: string) {
   const fileNames = fs.readdirSync(directory)
   return fileNames.map(fileName => {
     return {
@@ -26,7 +27,7 @@ function getAllFileIds(directory) {
   })
 }
 
-async function getFileData(directory, id) {
+async function getFileData(directory: string, id: string): Promise<ContentItem> {
   const fullPath = path.join(directory, `${id}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
 
@@ -34,20 +35,20 @@ async function getFileData(directory, id) {
 
   const processedContent = await remark()
     .use(remarkParse)
-    .use(remarkRehype)
     .use(remarkGfm, {
       tableCellPadding: true,
       tablePipeAlign: true,
-      stringLength: string => string.length
+      stringLength: (string: string) => string.length
     })
-    .use(rehypeStringify)
+    .use(remarkRehype)
     .use(rehypeHighlight, {
       ignoreMissing: true
     })
     .use(rehypeImgSize, {
       dir: 'public'
     })
-    .use(rehypeFigure, {})
+    .use(rehypeFigure)
+    .use(rehypeStringify)
     .process(matterResult.content)
 
   const contentHtml = processedContent.toString()
@@ -56,10 +57,10 @@ async function getFileData(directory, id) {
     id,
     contentHtml,
     ...matterResult.data
-  }
+  } as ContentItem
 }
 
-function getSortedFilesData(directory) {
+function getSortedFilesData(directory: string) {
   const fileNames = fs.readdirSync(directory)
   const allPostsData = fileNames.map(fileName => {
     const id = fileName.replace(/\.md$/, '')
@@ -75,7 +76,7 @@ function getSortedFilesData(directory) {
     }
   })
 
-  return allPostsData.sort(({ date: a }, { date: b }) => {
+  return allPostsData.sort(({ date: a }: any, { date: b }: any) => {
     if (a < b) {
       return 1
     } else if (a > b) {
@@ -87,13 +88,13 @@ function getSortedFilesData(directory) {
 }
 
 export const getAllPostIds = () => getAllFileIds(postsDirectory)
-export const getPostData = (id) => getFileData(postsDirectory, id)
+export const getPostData = (id: string) => getFileData(postsDirectory, id)
 export const getSortedPostsData = () => getSortedFilesData(postsDirectory)
 
 export const getAllFitnessFilesIds = () => getAllFileIds(fitnessFilesDirectory)
-export const getFitnessFilesData = (id) => getFileData(fitnessFilesDirectory, id)
+export const getFitnessFilesData = (id: string) => getFileData(fitnessFilesDirectory, id)
 export const getSortedFitnessFilesData = () => getSortedFilesData(fitnessFilesDirectory)
 
 export const getAllRecipesFilesIds = () => getAllFileIds(recipesFilesDirectory)
-export const getRecipesFilesData = (id) => getFileData(recipesFilesDirectory, id)
+export const getRecipesFilesData = (id: string) => getFileData(recipesFilesDirectory, id)
 export const getSortedRecipesFilesData = () => getSortedFilesData(recipesFilesDirectory)

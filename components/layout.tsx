@@ -1,10 +1,16 @@
 import Head from 'next/head'
 import styles from './layout.module.css'
 import Link from 'next/link'
+import { ReactNode } from 'react'
 
 export const siteTitle = 'ineluctable modalities'
 
-export default function Layout ({ children, home }) {
+interface LayoutProps {
+  children: ReactNode;
+  home?: boolean;
+}
+
+export default function Layout ({ children, home }: LayoutProps) {
   return (
     <div className={styles.container}>
       <Head>

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 
 const SkillBubbles = () => {
-  const canvasRef = useRef(null)
+  const canvasRef = useRef<HTMLCanvasElement>(null)
   const [activeCategory, setActiveCategory] = useState('all')
 
   const skillCategories = {
@@ -30,11 +30,13 @@ const SkillBubbles = () => {
 
   useEffect(() => {
     const canvas = canvasRef.current
+    if (!canvas) return
     const ctx = canvas.getContext('2d')
-    let bubbles = []
-    let animationFrameId
+    if (!ctx) return
+    let bubbles: any[] = []
+    let animationFrameId: number
     let isDragging = false
-    let draggedBubble = null
+    let draggedBubble: any = null
 
     // Set canvas dimensions
     const updateSize = () => {
@@ -49,7 +51,7 @@ const SkillBubbles = () => {
     const createBubbles = () => {
       bubbles = []
 
-      let allSkills = []
+      let allSkills: any[] = []
       if (activeCategory === 'all') {
         Object.values(skillCategories).forEach(skills => {
           allSkills = [...allSkills, ...skills]
