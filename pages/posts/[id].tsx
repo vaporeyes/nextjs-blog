@@ -1,9 +1,15 @@
+import { GetStaticProps, GetStaticPaths } from 'next'
 import { getAllPostIds, getPostData } from '../../components/posts'
 import Layout from '../../components/layout'
 import { formatDate } from '../../components/utils'
+import { ContentItem } from '../../types'
 
-export async function getStaticProps ({ params }) {
-  const postData = await getPostData(params.id)
+interface PostData extends ContentItem {
+  readingTime?: string;
+}
+
+export const getStaticProps: GetStaticProps<{ postData: PostData }> = async ({ params }) => {
+  const postData = await getPostData(params!.id as string) as PostData
   return {
     props: {
       postData
@@ -11,7 +17,7 @@ export async function getStaticProps ({ params }) {
   }
 }
 
-export async function getStaticPaths () {
+export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getAllPostIds()
   return {
     paths,
@@ -19,7 +25,11 @@ export async function getStaticPaths () {
   }
 }
 
-export default function Post ({ postData }) {
+interface PostProps {
+  postData: PostData;
+}
+
+export default function Post ({ postData }: PostProps) {
   return (
     <Layout>
       <article className='prose prose-lg dark:prose-invert mx-auto'>

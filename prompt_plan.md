@@ -16,7 +16,7 @@
 >
 > "Create a new file `types/index.ts`. In this file, define and export a TypeScript `type` or `interface` for the markdown frontmatter data. It should include `id`, `title`, `date`, `tags` (as an array of strings), and `contentHtml`. Let's call it `ContentItem`."
 
-> **Prompt 1.1.3: Apply Types to a Page**
+> **Prompt 1.1.3: Apply Types to a Page** ✅ COMPLETED
 >
 > "Refactor `pages/posts/[id].tsx` to use TypeScript. Import the `ContentItem` type. Apply this type to the `postData` prop for the `Post` component and to the return value of the `getStaticProps` function. Use Next.js-provided types for `GetStaticProps` and `GetStaticPaths`."
 
