@@ -28,11 +28,12 @@ export default function ContentPage({ contentData, contentType }: ContentPagePro
   const description = getDescription(contentData.contentHtml)
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://josh.contact'
   const contentUrl = `${siteUrl}/${contentType}s/${contentData.id}`
+  const pageTitle = `${contentData.title || 'Untitled'} | ineluctable modalities`
   
   return (
     <Layout>
       <Head>
-        <title>{contentData.title} | ineluctable modalities</title>
+        <title>{pageTitle}</title>
         <meta name="description" content={description} />
         
         {/* Open Graph meta tags */}

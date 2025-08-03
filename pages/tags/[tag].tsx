@@ -142,10 +142,12 @@ const getTypeLabel = (type: string) => {
 }
 
 export default function TagPage({ tag, items }: TagPageProps) {
+  const pageTitle = `Posts tagged with "${tag}" | ineluctable modalities`
+  
   return (
     <Layout>
       <Head>
-        <title>Posts tagged with "{tag}" | ineluctable modalities</title>
+        <title>{pageTitle}</title>
       </Head>
       <article className='prose prose-lg dark:prose-invert mx-auto'>
         <header className='mb-8'>

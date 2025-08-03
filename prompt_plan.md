@@ -90,7 +90,7 @@
 
 **Goal**: Improve social sharing previews and SEO by adding dynamic meta tags to content pages.
 
-> **Prompt 3.2.1: Update Layout/Page Component**
+> **Prompt 3.2.1: Update Layout/Page Component** ✅ COMPLETED
 >
 > "Using the code from `pages/posts/[id].tsx` as a template, create a reusable `ContentPage` component in `components/ContentPage.tsx`. This component will render the title, date, tags, and HTML content.
 > Inside this component, use the `next/head` component to dynamically set the following meta tags based on the `postData` prop:
@@ -100,6 +100,6 @@
 > * `<meta property="og:title" ... />`
 > * `<meta property="og:description" ... />`"
 
-> **Prompt 3.2.2: Refactor Pages to Use ContentPage**
+> **Prompt 3.2.2: Refactor Pages to Use ContentPage** ✅ COMPLETED
 >
 > "Refactor `pages/posts/[id].tsx`, `pages/recipes/[id].tsx`, and `pages/fitness/[id].tsx` to import and use the new `ContentPage` component, passing the fetched `postData` as a prop. This will centralize the page layout and SEO logic."
