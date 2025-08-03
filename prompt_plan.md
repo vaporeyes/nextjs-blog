@@ -51,18 +51,18 @@
 
 **Goal**: Create dynamic pages for each tag to allow users to browse content by topic.
 
-> **Prompt 2.2.1: Create Tag Page Route**
+> **Prompt 2.2.1: Create Tag Page Route** ✅ COMPLETED
 >
 > "Create a new dynamic route file at `pages/tags/[tag].tsx`."
 
-> **Prompt 2.2.2: Implement Data Fetching**
+> **Prompt 2.2.2: Implement Data Fetching** ✅ COMPLETED
 >
 > "In `pages/tags/[tag].tsx`, implement `getStaticPaths` and `getStaticProps`.
 >
 > * `getStaticPaths` should gather all unique tags from every markdown file (`posts`, `recipes`, `fitness`) and return them as paths.
 > * `getStaticProps` should find all content items that include the tag from the `params` and pass them to the page component as props."
 
-> **Prompt 2.2.3: Build Tag Page UI**
+> **Prompt 2.2.3: Build Tag Page UI** ✅ COMPLETED
 >
 > "In `pages/tags/[tag].tsx`, create a component that receives the filtered list of content items. It should display the tag name as a title (e.g., 'Posts tagged with "recipes"') and list the content items with links to their pages."
 
