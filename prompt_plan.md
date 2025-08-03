@@ -28,7 +28,7 @@
 
 **Goal**: Implement a client-side search feature to allow users to easily find content across the site.
 
-> **Prompt 2.1.1: Add Search Dependency**
+> **Prompt 2.1.1: Add Search Dependency** ✅ COMPLETED
 >
 > "Add the `fuse.js` library to the project by running the appropriate package manager command."
 
