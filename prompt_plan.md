@@ -1,105 +1,161 @@
-# Personal Blog Enhancement Plan
+# Prompt Plan: The "Constellation of Knowledge"
 
-**Objective**: Systematically refactor and enhance the Next.js personal blog by improving the codebase architecture, adding user-facing features, and boosting SEO.
+**Objective**: Create a dynamic, interactive force-directed graph component using TypeScript, D3, and React to visually represent the user's skills, interests, and the connections between them. This will replace the `SkillVisualizer` component.
 
-## Phase 1: Codebase & Architecture Enhancements 🏗️
+## Phase 1: Setup and Data Modeling
 
-### Task 1.1: TypeScript Migration
+**Goal**: Establish the necessary libraries and create a strongly-typed data structure for the constellation.
 
-**Goal**: Convert the project from JavaScript to TypeScript to improve code quality and maintainability, aligning with the project's own coding standards.
-
-> **Prompt 1.1.1: Initial Setup** ✅ COMPLETED
+> **Prompt 1.1: Install Dependencies**
 >
-> "Update the `package.json` to include necessary TypeScript types: `@types/react`, `@types/node`. Then, create a `tsconfig.json` file with Next.js default settings. Finally, rename all files in `pages/` and `components/` from `.js` to `.tsx`, and utility files like `components/utils.js` to `.ts`."
+> "Add the D3 force-simulation library and its TypeScript types to the project. Use the following command:
+> `yarn add d3-force d3-drag`
+> `yarn add -D @types/d3-force @types/d3-drag`"
 
-> **Prompt 1.1.2: Type Data Structures** ✅ COMPLETED
+> **Prompt 1.2: Define Data Types**
 >
-> "Create a new file `types/index.ts`. In this file, define and export a TypeScript `type` or `interface` for the markdown frontmatter data. It should include `id`, `title`, `date`, `tags` (as an array of strings), and `contentHtml`. Let's call it `ContentItem`."
-
-> **Prompt 1.1.3: Apply Types to a Page** ✅ COMPLETED
+> "In the `types/` directory, create a new file named `constellation.ts`. In this file, define and export the TypeScript interfaces for our graph data.
 >
-> "Refactor `pages/posts/[id].tsx` to use TypeScript. Import the `ContentItem` type. Apply this type to the `postData` prop for the `Post` component and to the return value of the `getStaticProps` function. Use Next.js-provided types for `GetStaticProps` and `GetStaticPaths`."
+> ```typescript
+> // types/constellation.ts
+> ```
 
----
+> // The NodeType will help us style nodes differently
+> export type NodeType = 'core' | 'skill' | 'interest' | 'book' | 'project' | 'concept';
 
-## Phase 2: Feature Enhancements ✨
+> // SimulationNode extends the D3 SimulationNodeDatum interface
+> export interface ConstellationNode extends d3.SimulationNodeDatum {
+> id: string; // Unique identifier
+> label: string;
+> type: NodeType;
+> radius: number; // For sizing the node circle
+> color?: string; // Optional specific color
+> }
 
-### Task 2.1: Search Functionality
+> // SimulationLink extends the D3 SimulationLinkDatum interface
+> export interface ConstellationLink extends d3.SimulationLinkDatum<ConstellationNode> {
+> source: string; // ID of the source node
+> target: string; // ID of the target node
+> label?: string; // Optional label for the connection
+> strength?: number; // Optional link strength
+> }
 
-**Goal**: Implement a client-side search feature to allow users to easily find content across the site.
-
-> **Prompt 2.1.1: Add Search Dependency** ✅ COMPLETED
+> export interface ConstellationData {
+> nodes: ConstellationNode[];
+> links: ConstellationLink[];
+> }
 >
-> "Add the `fuse.js` library to the project by running the appropriate package manager command."
+> ```"
+> ```
 
-> **Prompt 2.1.2: Create Search Index** ✅ COMPLETED
+> **Prompt 1.3: Create Constellation Data**
 >
-> "Modify `pages/index.tsx`'s `getStaticProps` function. In addition to fetching posts, recipes, etc., create a consolidated list of all content items. Write this list to a file named `search.json` inside the `public/` directory. This script should only run at build time."
-
-> **Prompt 2.1.3: Build Search Component** ✅ COMPLETED
+> "Create a new file at `data/constellation.ts`. Import the types from `types/constellation.ts` and create an exported constant named `constellationData`.
 >
-> "Create a new React component at `components/Search.tsx`. This component should:
+> Populate it with a small, representative sample of your data. Ensure you create a few 'core' nodes (like Software Development, Literature) and link other nodes to them. Also, create at least one link *between* different core concepts.
 >
-> 1. Have an input field for the search query.
-> 2. Use a `useEffect` hook to fetch `/search.json` on component mount.
-> 3. Use `fuse.js` to search the index based on user input.
-> 4. Display a list of matching results with links to the respective pages.
+> Here's a starting structure:
 >
-> Finally, add this `<Search />` component to the main layout in `components/layout.tsx`."
+> ```typescript
+> // data/constellation.ts
+> import { ConstellationData } from '../types/constellation';
+> ```
 
-### Task 2.2: Tag Pages
+> export const constellationData: ConstellationData = {
+> nodes: [
+> // Core Nodes
+> { id: 'dev', label: 'Software Development', type: 'core', radius: 35 },
+> { id: 'lit', label: 'Literature', type: 'core', radius: 35 },
+> { id: 'life', label: 'Life', type: 'core', radius: 35 },
 
-**Goal**: Create dynamic pages for each tag to allow users to browse content by topic.
+> ```
+> // Skill Nodes
+> { id: 'react', label: 'React', type: 'skill', radius: 20 },
+> { id: 'dataviz', label: 'Data Viz', type: 'skill', radius: 20 },
+> ```
 
-> **Prompt 2.2.1: Create Tag Page Route** ✅ COMPLETED
+> ```
+> // Book Node
+> { id: '3body', label: 'The 3-Body Problem', type: 'book', radius: 15 },
+> ```
+
+> ```
+> // Concept Node
+> { id: 'synthesis', label: 'Synthesis', type: 'concept', radius: 12 },
+> ```
 >
-> "Create a new dynamic route file at `pages/tags/[tag].tsx`."
+> ],
+> links: [
+> // Links to Cores
+> { source: 'dev', target: 'react', strength: 0.7 },
+> { source: 'dev', target: 'dataviz', strength: 0.7 },
+> { source: 'lit', target: '3body', strength: 0.7 },
 
-> **Prompt 2.2.2: Implement Data Fetching** ✅ COMPLETED
+> ```
+> // The "Magic" Link between concepts
+> { source: 'dataviz', target: '3body', label: 'Inspired by complex systems', strength: 0.1 },
+> { source: 'dev', target: 'synthesis', strength: 0.1 },
+> { source: 'lit', target: 'synthesis', strength: 0.1 },
+> ```
 >
-> "In `pages/tags/[tag].tsx`, implement `getStaticPaths` and `getStaticProps`.
+> ],
+> };
 >
-> * `getStaticPaths` should gather all unique tags from every markdown file (`posts`, `recipes`, `fitness`) and return them as paths.
-> * `getStaticProps` should find all content items that include the tag from the `params` and pass them to the page component as props."
+> ```"
+> ```
 
-> **Prompt 2.2.3: Build Tag Page UI** ✅ COMPLETED
+## Phase 2: Component Implementation & Rendering
+
+**Goal**: Build the React component that will run the physics simulation and render the constellation on a canvas.
+
+> **Prompt 2.1: Create the Constellation Component Shell**
 >
-> "In `pages/tags/[tag].tsx`, create a component that receives the filtered list of content items. It should display the tag name as a title (e.g., 'Posts tagged with "recipes"') and list the content items with links to their pages."
-
----
-
-## Phase 3: SEO & Content Discoverability 🚀
-
-### Task 3.1: RSS Feed Generation
-
-**Goal**: Provide an RSS feed so that readers can subscribe to blog updates.
-
-> **Prompt 3.1.1: Add RSS Package & Script** ✅ COMPLETED
+> "Create a new component at `components/Constellation.tsx`. It should:
 >
-> "Add the `feed` package to the project. Then, create a new script at `lib/rss.ts`. This script should export a function `generateRssFeed` that:
->
-> 1. Fetches all sorted post data.
-> 2. Uses the `feed` package to construct an RSS feed in XML format.
-> 3. Saves the output as `rss.xml` in the `public/` directory."
+> 1.  Import React, `useEffect`, and `useRef`.
+> 2.  Import the `constellationData` and the relevant types.
+> 3.  Define a functional component `Constellation`.
+> 4.  Inside the component, create a `canvasRef` using `useRef<HTMLCanvasElement | null>(null)`.
+> 5.  Return a `<canvas>` element with the `ref` attached."
 
-> **Prompt 3.1.2: Trigger RSS Generation** ✅ COMPLETED
+> **Prompt 2.2: Initialize and Run the D3 Simulation**
 >
-> "Modify the `build` script in `package.json` or call the `generateRssFeed` function within `getStaticProps` on the homepage to ensure the RSS feed is generated every time the site is built."
-
-### Task 3.2: Dynamic Meta Tags
-
-**Goal**: Improve social sharing previews and SEO by adding dynamic meta tags to content pages.
-
-> **Prompt 3.2.1: Update Layout/Page Component** ✅ COMPLETED
+> "Inside the `Constellation.tsx` component, create a `useEffect` hook that runs once on mount. This hook should contain all the D3 simulation logic.
 >
-> "Using the code from `pages/posts/[id].tsx` as a template, create a reusable `ContentPage` component in `components/ContentPage.tsx`. This component will render the title, date, tags, and HTML content.
-> Inside this component, use the `next/head` component to dynamically set the following meta tags based on the `postData` prop:
->
-> * `<title>`
-> * `<meta name="description" ... />` (use the first ~150 characters of the content)
-> * `<meta property="og:title" ... />`
-> * `<meta property="og:description" ... />`"
+> 1.  Get the canvas and its 2D rendering context.
+> 2.  Set up the D3 `forceSimulation` using the nodes from our data.
+> 3.  Add forces: `forceLink` (using our links data), `forceManyBody` (for repulsion), and `forceCenter`.
+> 4.  Define a `ticked` function. This function will be called on every step of the simulation. Inside `ticked`, write the canvas rendering logic: clear the canvas, then loop through all links to draw lines and all nodes to draw circles.
+> 5.  Connect the `ticked` function to the simulation's 'tick' event.
+> 6.  Make the component responsive by setting canvas dimensions based on its parent container and handling window resize events."
 
-> **Prompt 3.2.2: Refactor Pages to Use ContentPage** ✅ COMPLETED
+## Phase 3: Interactivity and Final Polish
+
+**Goal**: Make the constellation interactive and visually appealing, then integrate it into the "About" page.
+
+> **Prompt 3.1: Implement Node Dragging**
 >
-> "Refactor `pages/posts/[id].tsx`, `pages/recipes/[id].tsx`, and `pages/fitness/[id].tsx` to import and use the new `ContentPage` component, passing the fetched `postData` as a prop. This will centralize the page layout and SEO logic."
+> "Enhance the `useEffect` hook in `Constellation.tsx`. Use `d3.drag` to add drag-and-drop functionality to the nodes.
+>
+> 1.  Create a drag handler using `d3.drag()`.
+> 2.  Implement the `dragstarted`, `dragged`, and `dragended` functions.
+>       * On `dragstarted`, restart the simulation's alpha target to "wake up" the simulation.
+>       * On `dragged`, update the node's `fx` and `fy` (fixed position) to the cursor's position.
+>       * On `dragended`, release the fixed position by setting `fx` and `fy` to `null` and cool down the simulation.
+> 3.  Apply the drag handler to the canvas element."
+
+> **Prompt 3.2: Add Hover Tooltips and Styling**
+>
+> "Let's refine the visual presentation.
+>
+> 1.  Modify the rendering logic. Use a color scheme to draw nodes based on their `type` property (e.g., skills are blue, books are green, core concepts are gold).
+> 2.  Draw the `label` for each node near its circle.
+> 3.  Implement a `mousemove` event listener on the canvas. When the mouse hovers near a node, draw its label with a larger font or in a different color to act as a tooltip. Also, draw the labels for any connected links."
+
+> **Prompt 3.3: Final Integration**
+>
+> "Finally, let's replace the old visualizer.
+>
+> 1.  Go to `pages/about.tsx`.
+> 2.  Remove the `SkillVisualizer` component.
+> 3.  Import and render the new `Constellation` component in its place. Ensure it is placed within a container `div` that has defined dimensions so the canvas can size itself correctly."
