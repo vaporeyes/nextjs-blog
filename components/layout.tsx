@@ -2,6 +2,7 @@ import Head from 'next/head'
 import styles from './layout.module.css'
 import Link from 'next/link'
 import { ReactNode } from 'react'
+import Search from './Search'
 
 export const siteTitle = 'ineluctable modalities'
 
@@ -33,6 +34,7 @@ export default function Layout ({ children, home }: LayoutProps) {
           )}
         </header>
       </div>
+      {home && <Search />}
       <main>{children}</main>
     </div>
   )

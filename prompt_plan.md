@@ -36,7 +36,7 @@
 >
 > "Modify `pages/index.tsx`'s `getStaticProps` function. In addition to fetching posts, recipes, etc., create a consolidated list of all content items. Write this list to a file named `search.json` inside the `public/` directory. This script should only run at build time."
 
-> **Prompt 2.1.3: Build Search Component**
+> **Prompt 2.1.3: Build Search Component** ✅ COMPLETED
 >
 > "Create a new React component at `components/Search.tsx`. This component should:
 >
