@@ -165,10 +165,12 @@ export default function TagPage({ tag, items }: TagPageProps) {
           <ul className='space-y-6'>
             {items.map((item) => (
               <li key={`${item.type}-${item.id}`} className='border-b border-gray-200 dark:border-gray-700 pb-4'>
-                <Link href={item.url} className='block hover:bg-gray-50 dark:hover:bg-gray-800 p-2 -m-2 rounded'>
-                  <h2 className='text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100'>
-                    {item.title}
-                  </h2>
+                <div className='p-2 -m-2 rounded'>
+                  <Link href={item.url} className='block hover:underline'>
+                    <h2 className='text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100'>
+                      {item.title}
+                    </h2>
+                  </Link>
                   <div className='flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400'>
                     <span className='px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded'>
                       {getTypeLabel(item.type)}
@@ -195,7 +197,7 @@ export default function TagPage({ tag, items }: TagPageProps) {
                       ))}
                     </div>
                   )}
-                </Link>
+                </div>
               </li>
             ))}
           </ul>
