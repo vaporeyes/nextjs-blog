@@ -67,7 +67,7 @@ const Search = () => {
   }
 
   return (
-    <div className="search-container mb-8">
+    <div className="search-container">
       <div className="relative">
         <input
           type="text"

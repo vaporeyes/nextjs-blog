@@ -19,12 +19,17 @@ export default function Layout ({ children, home }: LayoutProps) {
         <meta name='description' content='a site' />
         <meta name='og:title' content={siteTitle} />
       </Head>
-      <div className='flex justify-between items-center mb-8'>
+      <div className='mb-8'>
         <header>
           {home ? (
-            <>
-              <h1 className={styles.heading2Xl}>{siteTitle}</h1>
-            </>
+            <div>
+              <div className='flex justify-between items-start gap-4 mb-4'>
+                <h1 className={styles.heading2Xl}>{siteTitle}</h1>
+                <div className='flex-1 max-w-md'>
+                  <Search />
+                </div>
+              </div>
+            </div>
           ) : (
             <>
               <Link href='/' className='backToHome'>
@@ -34,7 +39,6 @@ export default function Layout ({ children, home }: LayoutProps) {
           )}
         </header>
       </div>
-      {home && <Search />}
       <main>{children}</main>
     </div>
   )
