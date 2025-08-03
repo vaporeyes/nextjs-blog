@@ -12,7 +12,7 @@
 >
 > "Update the `package.json` to include necessary TypeScript types: `@types/react`, `@types/node`. Then, create a `tsconfig.json` file with Next.js default settings. Finally, rename all files in `pages/` and `components/` from `.js` to `.tsx`, and utility files like `components/utils.js` to `.ts`."
 
-> **Prompt 1.1.2: Type Data Structures**
+> **Prompt 1.1.2: Type Data Structures** ✅ COMPLETED
 >
 > "Create a new file `types/index.ts`. In this file, define and export a TypeScript `type` or `interface` for the markdown frontmatter data. It should include `id`, `title`, `date`, `tags` (as an array of strings), and `contentHtml`. Let's call it `ContentItem`."
 
