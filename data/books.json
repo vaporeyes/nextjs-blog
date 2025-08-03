@@ -3,6 +3,18 @@
     {
       "title": "Jimmy Corrigan: The Smartest Kid on Earth",
       "author": "Chris Ware"
+    },
+    {
+      "title": "Blood Meridian",
+      "author": "Cormac McCarthy"
+    },
+    {
+      "title": "Before the Law",
+      "author": "Franz Kafka"
+    },
+    {
+      "title": "Description of a Struggle",
+      "author": "Franz Kafka"
     }
   ],
   "2020": [
@@ -103,6 +115,10 @@
     {
       "title": "The Tale of the Body Thief",
       "author": "Anne Rice"
+    },
+    {
+      "title": "SPQR",
+      "author": "Mary Beard"
     }
   ],
   "2024": [
@@ -113,6 +129,10 @@
     {
       "title": "The Treasures of Pompeii and Herculaneum",
       "author": "Many Authors"
+    },
+    {
+      "title": "Lost Cities of the Ancient World",
+      "author": "Philip Matyszak"
     }
   ]
 }
