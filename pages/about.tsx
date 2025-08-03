@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Layout, { siteTitle } from '../components/layout'
-import SkillVisualizer from '../components/skillCharts/skillVisualizer'
+import Constellation from '../components/Constellation'
 
 const interests = {
   reading: '/reading',
@@ -37,15 +37,16 @@ export default function About() {
         <div className='relative py-8 mb-8'>
           <h1 className='text-center text-3xl md:text-4xl font-bold relative z-10'>
             <span className='bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400'>
-              Stats
+              Knowledge Constellation
             </span>
           </h1>
-          {/* <div className='absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-20 h-1 bg-gradient-to-r from-blue-500 to-teal-400 rounded-full opacity-70'></div> */}
           <p className='text-center text-sm text-gray-500 dark:text-gray-400 mt-2 italic'>
-            as I see them
+            an interactive map of interconnected interests
           </p>
         </div>
-        <SkillVisualizer />
+        <div className='w-full max-w-6xl mx-auto'>
+          <Constellation />
+        </div>
       </section>
     </Layout>
   )
