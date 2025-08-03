@@ -1,19 +1,28 @@
+import { GetStaticProps, GetStaticPaths } from 'next'
 import {
   getAllFitnessFilesIds,
   getFitnessFilesData
 } from '../../components/posts'
-import Layout from '../../components/layout'
+import ContentPage from '../../components/ContentPage'
+import { ContentItem } from '../../types'
+import Link from 'next/link'
 
-export async function getStaticProps({ params }) {
-  const postData = await getFitnessFilesData(params.id)
+interface FitnessData extends ContentItem {
+  readingTime?: string;
+  year?: number;
+  month?: number | string;
+}
+
+export const getStaticProps: GetStaticProps<{ fitnessData: FitnessData }> = async ({ params }) => {
+  const fitnessData = await getFitnessFilesData(params!.id as string) as FitnessData
   return {
     props: {
-      postData
+      fitnessData
     }
   }
 }
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getAllFitnessFilesIds()
   return {
     paths,
@@ -21,40 +30,19 @@ export async function getStaticPaths() {
   }
 }
 
-export default function Post({ postData }) {
+interface FitnessProps {
+  fitnessData: FitnessData;
+}
+
+export default function Fitness({ fitnessData }: FitnessProps) {
   return (
-    <Layout>
-      <article className='prose prose-lg dark:prose-invert mx-auto'>
-        <div className="mb-4">
-          <a href="/fitness" className="text-blue-500 hover:underline">&larr; Back to fitness posts</a>
-        </div>
-        <header className='mb-8'>
-          <h1 className='text-3xl md:text-4xl font-bold mb-2'>
-            {postData.title}
-          </h1>
-          <div className='flex items-center text-sm text-gray-500 dark:text-gray-400'>
-            <span className='mx-2'>•</span>
-            <time>{postData.year} - {postData.month}</time>
-            <span className='mx-2'>•</span>
-          </div>
-          {postData.tags && (
-            <div className='flex flex-wrap gap-2 mt-4'>
-              {postData.tags.map(tag => (
-                <span
-                  key={tag}
-                  className='px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-xs'
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          )}
-        </header>
-        <div
-          className='markdown'
-          dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
-        />
-      </article>
-    </Layout>
+    <>
+      <div className="mb-4">
+        <Link href="/fitness" className="text-blue-500 hover:underline">
+          &larr; Back to fitness posts
+        </Link>
+      </div>
+      <ContentPage contentData={fitnessData} contentType="fitness" />
+    </>
   )
 }
