@@ -27,8 +27,12 @@ const Constellation: React.FC = () => {
     updateCanvasSize();
     window.addEventListener('resize', updateCanvasSize);
 
-    // Create a deep copy of nodes for simulation
-    const nodes: ConstellationNode[] = constellationData.nodes.map(d => ({ ...d }));
+    // Create a deep copy of nodes for simulation and initialize positions
+    const nodes: ConstellationNode[] = constellationData.nodes.map((d, i) => ({
+      ...d,
+      x: canvas.width / 2 + (Math.random() - 0.5) * 200,
+      y: canvas.height / 2 + (Math.random() - 0.5) * 200
+    }));
     const links: ConstellationLink[] = constellationData.links.map(d => ({ ...d }));
 
     // Create the force simulation
@@ -36,15 +40,26 @@ const Constellation: React.FC = () => {
       .force('link', d3.forceLink<ConstellationNode, ConstellationLink>(links)
         .id(d => d.id)
         .strength(d => d.strength || 0.5)
+        .distance(100)
       )
       .force('charge', d3.forceManyBody()
-        .strength(-300)
-        .distanceMax(400)
+        .strength(-200)
+        .distanceMax(300)
       )
       .force('center', d3.forceCenter(canvas.width / 2, canvas.height / 2))
       .force('collision', d3.forceCollide<ConstellationNode>()
         .radius(d => d.radius + 5)
-      );
+      )
+      .force('boundary', () => {
+        // Keep nodes within canvas bounds
+        nodes.forEach(node => {
+          if (node.x && node.y) {
+            const margin = node.radius + 20;
+            node.x = Math.max(margin, Math.min(canvas.width - margin, node.x));
+            node.y = Math.max(margin, Math.min(canvas.height - margin, node.y));
+          }
+        });
+      });
 
     // Define node colors based on type
     const getNodeColor = (type: string): string => {
@@ -362,10 +377,17 @@ const Constellation: React.FC = () => {
   }, []);
 
   return (
-    <div className="constellation-container" style={{ width: '100%', height: '600px', position: 'relative' }}>
+    <div className="constellation-container" style={{ 
+      width: '100%', 
+      height: '600px', 
+      minHeight: '400px',
+      position: 'relative', 
+      overflow: 'hidden',
+      backgroundColor: 'transparent'
+    }}>
       <canvas 
         ref={canvasRef}
-        style={{ width: '100%', height: '100%' }}
+        style={{ width: '100%', height: '100%', display: 'block' }}
         className="constellation-canvas"
       />
     </div>

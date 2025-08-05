@@ -44,7 +44,7 @@ export default function About() {
             an interactive map of interconnected interests
           </p>
         </div>
-        <div className='w-full max-w-6xl mx-auto'>
+        <div className='w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8'>
           <Constellation />
         </div>
       </section>
