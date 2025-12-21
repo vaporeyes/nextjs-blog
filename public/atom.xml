@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://josh.contact</id>
     <title>ineluctable modalities</title>
-    <updated>2025-12-21T11:34:56.486Z</updated>
+    <updated>2025-12-21T12:03:43.439Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Josh</name>
@@ -16,27 +16,194 @@
     <icon>https://josh.contact/favicon.ico</icon>
     <rights>All rights reserved 2025, Josh</rights>
     <entry>
-        <title type="html"><![CDATA[Building a Swift iOS App]]></title>
-        <id>https://josh.contact/posts/building-an-ios-app</id>
-        <link href="https://josh.contact/posts/building-an-ios-app"/>
-        <updated>2025-08-19T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[A Subdomain for My Notes
-I've been using Obsidian for a while now and it has this interesting paid feature for publishing notes. I decided to setup Cloudflare as my DNS for this site and use it to hos...]]></summary>
-        <content type="html"><![CDATA[<h2>A Subdomain for My Notes</h2>
-<p>I've been using Obsidian for a while now and it has this interesting paid feature for publishing notes. I decided to setup Cloudflare as my DNS for this site and use it to host my Obsidian notes as a subdomain, i.e. <code>notes.josh.contact</code>, it was literally as easy as clicking some buttons, changing nameservers and waiting for DNS to propagate. And now I have a notes subdomain! I figure longer-post things would end up here and shorter musings, thoughts and other things ending up there.</p>
-<h2>Now I Have to Write More</h2>
-<p>I would like to write more (online anyway) as it feels like it helps me consolidate thoughts and feelings on topics. I've kept a written "diary" of sorts, more like an engineering journal, off and on for many years - since my early days in IT back in 2008/2009. I found that once I moved into information work (from driving forklifts) that I needed to remember far more "things"; since the brain is so tricky and fickle, writing things down has been key.</p>
-<h2>The AI Boom</h2>
-<p>This new agentic coding / AI boom is very interesting. It <em>feels</em> like, if we do this right, agentic coding could really make experienced programmers far more productive in addition to bring junior and mid-level engineers up in their understanding. To me, thats the real issue: using AI safely to avoid knowledge rot. I do feel there is something to be said for "understanding" what is happening underneath.</p>]]></content>
+        <title type="html"><![CDATA[AI-Assisted Development: Building Strong Stats with Claude]]></title>
+        <id>https://josh.contact/posts/building-strong-stats-with-claude</id>
+        <link href="https://josh.contact/posts/building-strong-stats-with-claude"/>
+        <updated>2025-10-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[The Problem
+I use the Strong app to track my workouts. It's great for logging sets and reps, but its analytics are pretty basic. I wanted to see trends over time, compare exercises, track volume progr...]]></summary>
+        <content type="html"><![CDATA[<h2>The Problem</h2>
+<p>I use the Strong app to track my workouts. It's great for logging sets and reps, but its analytics are pretty basic. I wanted to see trends over time, compare exercises, track volume progression - the kind of insights that help you understand if your training is actually working.</p>
+<p>A large part of my motivation to build this was in finding an existing app written in Streamlit that I thought would work well as a NextJS SPA.</p>
+<p>Strong exports data as CSV, so the data was there. I just needed to build something to visualize it.</p>
+<h2>The Speed Run: MVP in a Day</h2>
+<p>Sometime in September, I sat down with Claude and went from <code>npx create-next-app</code> to a deployed, working app in a single day. Eleven commits, starting at 5:34 AM and wrapping up that evening.</p>
+<p>The core pieces came together fast:</p>
+<ul>
+<li>CSV parser that handles Strong's export format (including multi-language support)</li>
+<li>Data aggregation for workout and exercise-level metrics</li>
+<li>Interactive charts with Recharts</li>
+<li>File upload, date filtering, export functionality</li>
+</ul>
+<p>By the end of the day, I had something that worked. You could upload your Strong CSV, see your workout history visualized, filter by date range, and export charts. It was functional, but it wasn't <em>good</em>.</p>
+<h2>The Real Work: Structured AI-Assisted Development</h2>
+<p>The next phase is where things got interesting. Instead of just throwing prompts at Claude and hoping for the best, I developed a structured approach using what I call a "prompt plan."</p>
+<h3>The Three-Layer Plan</h3>
+<p>The plan had three layers:</p>
+<ol>
+<li>
+<p><strong>Big-Picture Blueprint</strong> - What we're building and why. A high-level table mapping phases to goals to deliverables.</p>
+</li>
+<li>
+<p><strong>Iterative Chunks</strong> - The work broken into coherent "sprints" that stack cleanly. Each chunk is a logical unit of functionality.</p>
+</li>
+<li>
+<p><strong>Codex Prompt Series</strong> - Granular, test-driven prompts. One per step. Each prompt is self-contained and can be pasted directly into Claude.</p>
+</li>
+</ol>
+<h3>Chunks and Steps</h3>
+<p>The UI revamp was broken into 10 chunks:</p>
+<table>
+<thead>
+<tr>
+<th>Chunk</th>
+<th>Focus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C0</td>
+<td>Foundation - branch, deps, testing setup</td>
+</tr>
+<tr>
+<td>C1</td>
+<td>Global Header - sticky bar, theme toggle</td>
+</tr>
+<tr>
+<td>C2</td>
+<td>Filter Bar - date picker, URL sync</td>
+</tr>
+<tr>
+<td>C3</td>
+<td>KPI Cards - glanceable metrics</td>
+</tr>
+<tr>
+<td>C4</td>
+<td>Tabbed Main Content - Trends, Insights, Raw Data</td>
+</tr>
+<tr>
+<td>C5</td>
+<td>Context Drawer - settings panel</td>
+</tr>
+<tr>
+<td>C6</td>
+<td>Visual Polish - tokens, dark mode</td>
+</tr>
+<tr>
+<td>C7</td>
+<td>Interaction Improvements - tooltips, skeletons</td>
+</tr>
+</tbody>
+</table>
+<p>Each chunk was further decomposed into 5-7 steps. For example, C1 (Global Header) had:</p>
+<ul>
+<li>C1-S1: Scaffold Header component with logo slot</li>
+<li>C1-S2: Add Export / Share / Upload buttons</li>
+<li>C1-S3: User avatar dropdown with dark-mode toggle</li>
+<li>C1-S4: Make header sticky with scroll shadow</li>
+<li>C1-S5: Unit + visual regression tests</li>
+</ul>
+<h3>Test-Driven Prompts</h3>
+<p>Every prompt followed the same structure:</p>
+<pre><code class="hljs language-text"># Context
+What's already built, what we're adding to
+
+# Task
+Numbered steps with specific implementation details
+
+# Tests
+Concrete acceptance criteria - what must pass
+</code></pre>
+<p>The key insight: <strong>tests are specified before implementation</strong>. Each prompt tells Claude exactly what tests to write, then what code to write to make them pass. This isn't just good practice - it gives the AI a clear target and makes it much harder to go off track.</p>
+<p>Here's an abbreviated example from C1-S4:</p>
+<pre><code># Context
+Header must stay visible and gain subtle shadow only after
+the user scrolls past 24 px.
+
+# Task
+1. Give &#x3C;Header> Tailwind classes: sticky top-0 z-30...
+2. Implement useScrollShadow hook
+3. When scrolled is true, add shadow-md
+4. Debounce scroll handler with requestAnimationFrame
+
+# Tests
+- RTL: mock window.scrollY = 0 -> header lacks .shadow-md
+- RTL: mock window.scrollY = 100 -> header has .shadow-md
+- Playwright: scroll dashboard, assert header still visible
+</code></pre>
+<h3>The Workflow</h3>
+<p>Each "section of work" looked roughly like this:</p>
+<ol>
+<li>Pick the next step from the plan (e.g., C2-S3)</li>
+<li>Paste the prompt into Claude</li>
+<li>Review the generated code and tests</li>
+<li>Run tests, fix any issues</li>
+<li>Commit with a descriptive message</li>
+<li>Update the progress table in the prompt plan</li>
+<li>Move to next step</li>
+</ol>
+<p>The progress tables made it easy to track where I was:</p>
+<pre><code>| Step      | Prompt ID               | Status |
+| --------- | ----------------------- | ------ |
+| **C2-S1** | DateRangePicker         | done   |
+| **C2-S2** | Filter Context provider | done   |
+| **C2-S3** | URL query-param sync    | done   |
+| **C2-S4** | Mobile collapse         | done   |
+| **C2-S5** | Unit + Playwright       | done   |
+</code></pre>
+<h2>What Made This Work</h2>
+<p>A few things made this approach effective:</p>
+<p><strong>1. Context Preservation</strong></p>
+<p>Each prompt included just enough context about what already existed. Claude doesn't need to understand the entire codebase - it needs to understand the specific integration points for this step.</p>
+<p><strong>2. Feature Flags</strong></p>
+<p>New work was always behind a feature flag. This meant I could merge incrementally without breaking production. The prompt plan explicitly called this out: "Each phase releases real value behind a feature flag so production is always stable."</p>
+<p><strong>3. Explicit Dependencies</strong></p>
+<p>The plan mapped dependencies between chunks. C4 (Tabs) depended on C1 (Header) and C2 (Filters). This prevented me from jumping ahead and creating integration headaches.</p>
+<p><strong>4. Test-First Mentality</strong></p>
+<p>By specifying tests in the prompt, I got two benefits: Claude writes the tests (which I'd have to write anyway), and the tests serve as acceptance criteria that tell me when a step is actually done.</p>
+<p><strong>5. Small Steps</strong></p>
+<p>Each step was small enough to complete in one session. If a step feels too big, it probably needs to be split. The C3 (KPI Cards) chunk had separate steps for the component, the data hook, the grid layout, skeleton animations, and tests.</p>
+<h2>The Tech Stack</h2>
+<p>For those interested in the specifics:</p>
+<ul>
+<li><strong>Framework</strong>: Next.js 15 with App Router</li>
+<li><strong>Language</strong>: TypeScript (strict mode)</li>
+<li><strong>Styling</strong>: Tailwind CSS 3.4</li>
+<li><strong>Components</strong>: Headless UI for accessible primitives</li>
+<li><strong>Animation</strong>: Framer Motion</li>
+<li><strong>Charts</strong>: Recharts</li>
+<li><strong>State</strong>: Zustand</li>
+<li><strong>CSV Parsing</strong>: PapaParse</li>
+<li><strong>Testing</strong>: Jest + React Testing Library + Playwright</li>
+</ul>
+<p>The app is a PWA that works offline. All data processing happens client-side - your workout data never leaves your browser.</p>
+<h2>Lessons Learned</h2>
+<p><strong>Break it down further than you think necessary.</strong> A step that says "implement the header" is too vague. A step that says "add three icon buttons with specific aria-labels that collapse into a menu below 640px" gives Claude exactly what it needs.</p>
+<p><strong>Write the tests into the prompt.</strong> Don't leave testing as an afterthought or a separate step. Include the specific test cases you expect, and Claude will write both the tests and the code that passes them.</p>
+<p><strong>Keep a living progress document.</strong> The prompt plan wasn't just a planning artifact - it was updated after every step. This made it easy to resume after breaks and track overall progress.</p>
+<p><strong>Feature flags are worth the overhead.</strong> Being able to merge daily without breaking prod meant I could move fast and maintain momentum.</p>
+<p><strong>The AI is a collaborator, not a replacement.</strong> I still reviewed every line of code, ran every test, and made judgment calls about architecture. Claude dramatically accelerated the typing and the boilerplate, but the decisions were mine.</p>
+<h2>The Result</h2>
+<p>Strong Stats went from a rough MVP to a polished, accessible, mobile-friendly app over the course of a couple of weeks. It has:</p>
+<ul>
+<li>Responsive KPI cards with trend indicators</li>
+<li>Interactive charts with collapsible legends</li>
+<li>Per-exercise drill-downs with sparklines and 1RM estimation</li>
+<li>Dark mode with proper contrast ratios</li>
+<li>Keyboard navigation and screen reader support</li>
+<li>Lighthouse scores above 90 across the board</li>
+</ul>
+<p>More importantly, I have a methodology I can reuse. The prompt-plan approach works for any substantial feature work. Write the plan, break it into chunks, break chunks into test-driven steps, execute one at a time.</p>]]></content>
         <author>
             <name>Josh</name>
             <email>contact@josh.contact</email>
             <uri>https://josh.contact</uri>
         </author>
-        <category label="cloudflare"/>
-        <category label="obsidian"/>
-        <category label="notes"/>
-        <category label="writing"/>
+        <category label="programming"/>
+        <category label="ai"/>
+        <category label="claude"/>
+        <category label="nextjs"/>
+        <category label="fitness"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Cloudflare + Notes on a Subdomain]]></title>
