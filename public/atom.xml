@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://josh.contact</id>
     <title>ineluctable modalities</title>
-    <updated>2025-08-04T15:33:39.477Z</updated>
+    <updated>2025-12-21T11:34:56.486Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Josh</name>
@@ -15,6 +15,29 @@
     <logo>https://josh.contact/favicon.ico</logo>
     <icon>https://josh.contact/favicon.ico</icon>
     <rights>All rights reserved 2025, Josh</rights>
+    <entry>
+        <title type="html"><![CDATA[Building a Swift iOS App]]></title>
+        <id>https://josh.contact/posts/building-an-ios-app</id>
+        <link href="https://josh.contact/posts/building-an-ios-app"/>
+        <updated>2025-08-19T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[A Subdomain for My Notes
+I've been using Obsidian for a while now and it has this interesting paid feature for publishing notes. I decided to setup Cloudflare as my DNS for this site and use it to hos...]]></summary>
+        <content type="html"><![CDATA[<h2>A Subdomain for My Notes</h2>
+<p>I've been using Obsidian for a while now and it has this interesting paid feature for publishing notes. I decided to setup Cloudflare as my DNS for this site and use it to host my Obsidian notes as a subdomain, i.e. <code>notes.josh.contact</code>, it was literally as easy as clicking some buttons, changing nameservers and waiting for DNS to propagate. And now I have a notes subdomain! I figure longer-post things would end up here and shorter musings, thoughts and other things ending up there.</p>
+<h2>Now I Have to Write More</h2>
+<p>I would like to write more (online anyway) as it feels like it helps me consolidate thoughts and feelings on topics. I've kept a written "diary" of sorts, more like an engineering journal, off and on for many years - since my early days in IT back in 2008/2009. I found that once I moved into information work (from driving forklifts) that I needed to remember far more "things"; since the brain is so tricky and fickle, writing things down has been key.</p>
+<h2>The AI Boom</h2>
+<p>This new agentic coding / AI boom is very interesting. It <em>feels</em> like, if we do this right, agentic coding could really make experienced programmers far more productive in addition to bring junior and mid-level engineers up in their understanding. To me, thats the real issue: using AI safely to avoid knowledge rot. I do feel there is something to be said for "understanding" what is happening underneath.</p>]]></content>
+        <author>
+            <name>Josh</name>
+            <email>contact@josh.contact</email>
+            <uri>https://josh.contact</uri>
+        </author>
+        <category label="cloudflare"/>
+        <category label="obsidian"/>
+        <category label="notes"/>
+        <category label="writing"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Cloudflare + Notes on a Subdomain]]></title>
         <id>https://josh.contact/posts/setting-up-cloudflare-for-this-site</id>

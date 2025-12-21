@@ -9,23 +9,23 @@ import { formatDate } from '../../components/utils'
 import {
   getSortedPostsData,
   getSortedFitnessFilesData,
-  getSortedRecipesFilesData
+  getSortedRecipesFilesData,
 } from '../../components/posts'
 
 interface TaggedItem {
-  id: string;
-  title: string;
-  date?: string;
-  year?: number;
-  month?: number;
-  tags?: string[];
-  type: 'post' | 'fitness' | 'recipe';
-  url: string;
+  id: string
+  title: string
+  date?: string
+  year?: number
+  month?: number
+  tags?: string[]
+  type: 'post' | 'fitness' | 'recipe'
+  url: string
 }
 
 interface TagPageProps {
-  tag: string;
-  items: TaggedItem[];
+  tag: string
+  items: TaggedItem[]
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -40,36 +40,38 @@ export const getStaticPaths: GetStaticPaths = async () => {
   // Add tags from posts
   allPosts.forEach((post: any) => {
     if (post.tags && Array.isArray(post.tags)) {
-      post.tags.forEach(tag => tagSet.add(tag))
+      post.tags.forEach((tag) => tagSet.add(tag))
     }
   })
 
   // Add tags from fitness
   allFitness.forEach((item: any) => {
     if (item.tags && Array.isArray(item.tags)) {
-      item.tags.forEach(tag => tagSet.add(tag))
+      item.tags.forEach((tag) => tagSet.add(tag))
     }
   })
 
   // Add tags from recipes
   allRecipes.forEach((recipe: any) => {
     if (recipe.tags && Array.isArray(recipe.tags)) {
-      recipe.tags.forEach(tag => tagSet.add(tag))
+      recipe.tags.forEach((tag) => tagSet.add(tag))
     }
   })
 
   // Generate paths for each unique tag
-  const paths = Array.from(tagSet).map(tag => ({
-    params: { tag }
+  const paths = Array.from(tagSet).map((tag) => ({
+    params: { tag },
   }))
 
   return {
     paths,
-    fallback: false
+    fallback: false,
   }
 }
 
-export const getStaticProps: GetStaticProps<TagPageProps> = async ({ params }) => {
+export const getStaticProps: GetStaticProps<TagPageProps> = async ({
+  params,
+}) => {
   const tag = params!.tag as string
 
   // Get all content
@@ -86,7 +88,7 @@ export const getStaticProps: GetStaticProps<TagPageProps> = async ({ params }) =
       items.push({
         ...post,
         type: 'post',
-        url: `/posts/${post.id}`
+        url: `/posts/${post.id}`,
       })
     }
   })
@@ -97,7 +99,7 @@ export const getStaticProps: GetStaticProps<TagPageProps> = async ({ params }) =
       items.push({
         ...item,
         type: 'fitness',
-        url: `/fitness/${item.id}`
+        url: `/fitness/${item.id}`,
       })
     }
   })
@@ -108,7 +110,7 @@ export const getStaticProps: GetStaticProps<TagPageProps> = async ({ params }) =
       items.push({
         ...recipe,
         type: 'recipe',
-        url: `/recipes/${recipe.id}`
+        url: `/recipes/${recipe.id}`,
       })
     }
   })
@@ -123,8 +125,8 @@ export const getStaticProps: GetStaticProps<TagPageProps> = async ({ params }) =
   return {
     props: {
       tag,
-      items
-    }
+      items,
+    },
   }
 }
 
@@ -143,46 +145,54 @@ const getTypeLabel = (type: string) => {
 
 export default function TagPage({ tag, items }: TagPageProps) {
   const pageTitle = `Posts tagged with "${tag}" | ineluctable modalities`
-  
+
   return (
     <Layout>
       <Head>
         <title>{pageTitle}</title>
       </Head>
-      <article className='prose prose-lg dark:prose-invert mx-auto'>
-        <header className='mb-8'>
-          <h1 className='text-3xl md:text-4xl font-bold mb-4'>
-            Posts tagged with "{tag}"
+      <article className="prose prose-lg dark:prose-invert mx-auto">
+        <header className="mb-8">
+          <h1 className="text-3xl md:text-4xl font-bold mb-4">
+            Posts tagged with &ldquo;{tag}&rdquo;
           </h1>
-          <p className='text-gray-600 dark:text-gray-400'>
-            Found {items.length} {items.length === 1 ? 'item' : 'items'} tagged with "{tag}"
+          <p className="text-gray-600 dark:text-gray-400">
+            Found {items.length} {items.length === 1 ? 'item' : 'items'} tagged
+            with &ldquo;{tag}&rdquo;
           </p>
         </header>
 
         {items.length === 0 ? (
           <p>No items found with this tag.</p>
         ) : (
-          <ul className='space-y-6'>
+          <ul className="space-y-6">
             {items.map((item) => (
-              <li key={`${item.type}-${item.id}`} className='border-b border-gray-200 dark:border-gray-700 pb-4'>
-                <div className='p-2 -m-2 rounded'>
-                  <Link href={item.url} className='block hover:underline'>
-                    <h2 className='text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100'>
+              <li
+                key={`${item.type}-${item.id}`}
+                className="border-b border-gray-200 dark:border-gray-700 pb-4"
+              >
+                <div className="p-2 -m-2 rounded">
+                  <Link href={item.url} className="block hover:underline">
+                    <h2 className="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">
                       {item.title}
                     </h2>
                   </Link>
-                  <div className='flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400'>
-                    <span className='px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded'>
+                  <div className="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400">
+                    <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded">
                       {getTypeLabel(item.type)}
                     </span>
-                    {item.date && <time dateTime={item.date}>{formatDate(item.date)}</time>}
+                    {item.date && (
+                      <time dateTime={item.date}>{formatDate(item.date)}</time>
+                    )}
                     {item.year && item.month && (
-                      <time>{item.year}-{String(item.month).padStart(2, '0')}</time>
+                      <time>
+                        {item.year}-{String(item.month).padStart(2, '0')}
+                      </time>
                     )}
                   </div>
                   {item.tags && item.tags.length > 0 && (
-                    <div className='flex flex-wrap gap-2 mt-3'>
-                      {item.tags.map(t => (
+                    <div className="flex flex-wrap gap-2 mt-3">
+                      {item.tags.map((t) => (
                         <Link
                           key={t}
                           href={`/tags/${t}`}

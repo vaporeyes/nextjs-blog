@@ -6,14 +6,14 @@ import Fuse from 'fuse.js'
 import Link from 'next/link'
 
 interface SearchItem {
-  id: string;
-  title: string;
-  date?: string;
-  tags?: string[];
-  type: string;
-  url: string;
-  year?: number;
-  month?: number;
+  id: string
+  title: string
+  date?: string
+  tags?: string[]
+  type: string
+  url: string
+  year?: number
+  month?: number
 }
 
 const Search = () => {
@@ -25,12 +25,12 @@ const Search = () => {
   // Fetch search index on component mount
   useEffect(() => {
     fetch('/search.json')
-      .then(response => response.json())
-      .then(data => {
+      .then((response) => response.json())
+      .then((data) => {
         setSearchIndex(data)
         setIsLoading(false)
       })
-      .catch(error => {
+      .catch((error) => {
         console.error('Error loading search index:', error)
         setIsLoading(false)
       })
@@ -46,11 +46,11 @@ const Search = () => {
     const fuse = new Fuse(searchIndex, {
       keys: ['title', 'tags', 'id'],
       threshold: 0.3,
-      includeScore: true
+      includeScore: true,
     })
 
     const results = fuse.search(searchTerm)
-    setSearchResults(results.map(result => result.item))
+    setSearchResults(results.map((result) => result.item))
   }, [searchTerm, searchIndex])
 
   const getTypeLabel = (type: string) => {
@@ -86,12 +86,15 @@ const Search = () => {
           </button>
         )}
       </div>
-      
+
       {searchResults.length > 0 && (
         <div className="mt-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg">
           <ul className="divide-y divide-gray-200 dark:divide-gray-700">
             {searchResults.map((result) => (
-              <li key={`${result.type}-${result.id}`} className="p-4 hover:bg-gray-50 dark:hover:bg-gray-700">
+              <li
+                key={`${result.type}-${result.id}`}
+                className="p-4 hover:bg-gray-50 dark:hover:bg-gray-700"
+              >
                 <Link href={result.url} className="block">
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
@@ -104,12 +107,15 @@ const Search = () => {
                         </span>
                         {result.date && <span>{result.date}</span>}
                         {result.year && result.month && (
-                          <span>{result.year}-{String(result.month).padStart(2, '0')}</span>
+                          <span>
+                            {result.year}-
+                            {String(result.month).padStart(2, '0')}
+                          </span>
                         )}
                       </div>
                       {result.tags && result.tags.length > 0 && (
                         <div className="flex flex-wrap gap-1 mt-2">
-                          {result.tags.map(tag => (
+                          {result.tags.map((tag) => (
                             <span
                               key={tag}
                               className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-xs"
@@ -130,7 +136,7 @@ const Search = () => {
 
       {searchTerm && searchResults.length === 0 && !isLoading && (
         <div className="mt-4 text-center text-gray-600 dark:text-gray-400">
-          No results found for "{searchTerm}"
+          No results found for &ldquo;{searchTerm}&rdquo;
         </div>
       )}
     </div>
